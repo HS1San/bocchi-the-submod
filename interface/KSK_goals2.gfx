@@ -12,8 +12,23 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_KSK_chemistry_within_chaos"
+		texturefile = "gfx/interface/goals/KSK_chemistry_within_chaos.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_drunken_democracy"
+		texturefile = "gfx/interface/goals/KSK_drunken_democracy.png"
+	}
+
+	SpriteType = {
 		name = "GFX_KSK_establish_onikoro"
 		texturefile = "gfx/interface/goals/KSK_establish_onikoro.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_folt_performances"
+		texturefile = "gfx/interface/goals/KSK_folt_performances.png"
 	}
 
 	SpriteType = {
@@ -39,5 +54,10 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_KSK_symbol_of_alcoholism"
 		texturefile = "gfx/interface/goals/KSK_symbol_of_alcoholism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_the_world_is_mine"
+		texturefile = "gfx/interface/goals/KSK_the_world_is_mine.png"
 	}
 }
