@@ -12,9 +12,10 @@
 	
 	default = no
 	
-	continuous_focus_position = { x = 50 y = 1500 }
+	continuous_focus_position = { x = 1750 y = 1500 }
 
 	shared_focus = KSK_drunken_democracy
+	shared_focus = KSK_its_over
 
 	focus = {
 		id = KSK_expand_naval_and_air_production
@@ -7984,7 +7985,7 @@ shared_focus = {
 shared_focus = {
 	id = KSK_promote_kessoku_band
 	icon = GFX_KSK_promote_kessoku_band
-	cost = 7
+	cost = 8
 	x = -3
 	y = 1
 	completion_reward = {
@@ -8141,8 +8142,6 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_im_the_only_ghost"
 		remove_ideas = ksk_powerless_leader
-		# TODO
-		set_cosmetic_tag = HSKE
 		KSK_kikuri_hiroi = {
 			if = {
 				limit = { has_ideology = liberalism }
@@ -8156,6 +8155,10 @@ shared_focus = {
 		}
 	}
 	relative_position_id = KSK_symbol_of_alcoholism
+	prerequisite = {
+		focus = KSK_promote_kessoku_band
+		focus = KSK_promote_sick_hack
+	}
 	prerequisite = { focus = KSK_symbol_of_alcoholism }
 }
 
@@ -8167,7 +8170,9 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_improvised_governance"
-		add_country_leader_trait = KSK_kikuri_master_of_improvisation_1
+		KSK_kikuri_hiroi = {
+			add_country_leader_trait = KSK_kikuri_master_of_improvisation_1
+		}
 		add_popularity = { ideology = democratic popularity = 0.10 }
 	}
 	relative_position_id = KSK_im_the_only_ghost
@@ -8213,9 +8218,11 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_prepare_for_big_trouble"
-		swap_ruler_traits = {
-			remove = KSK_kikuri_master_of_improvisation_1
-			add = KSK_kikuri_master_of_improvisation_2
+		KSK_kikuri_hiroi = {
+			swap_country_leader_traits  = {
+				remove = KSK_kikuri_master_of_improvisation_1
+				add = KSK_kikuri_master_of_improvisation_2
+			}
 		}
 	}
 	relative_position_id = KSK_chemistry_within_chaos
@@ -8310,4 +8317,543 @@ shared_focus = {
 	relative_position_id = KSK_the_wakaru_ultimatum
 	prerequisite = { focus = KSK_the_wakaru_ultimatum }
 	mutually_exclusive = { focus = KSK_regional_allies }
+}
+
+shared_focus = {
+	id = KSK_its_over
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -40
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_its_over"
+	}
+	relative_position_id = KSK_political_turmoil
+	prerequisite = { focus = KSK_political_turmoil }
+}
+
+shared_focus = {
+	id = KSK_eliminate_ryo
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_ryo"
+	}
+	relative_position_id = KSK_its_over
+	prerequisite = { focus = KSK_its_over }
+}
+
+shared_focus = {
+	id = KSK_eliminate_kita
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_kita"
+	}
+	relative_position_id = KSK_eliminate_ryo
+	prerequisite = { focus = KSK_eliminate_ryo }
+}
+
+shared_focus = {
+	id = KSK_eliminate_nijika
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_nijika"
+	}
+	relative_position_id = KSK_its_over
+	prerequisite = { focus = KSK_its_over }
+}
+
+shared_focus = {
+	id = KSK_eliminate_bocchi
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_bocchi"
+	}
+	relative_position_id = KSK_eliminate_nijika
+	prerequisite = { focus = KSK_eliminate_nijika }
+}
+
+shared_focus = {
+	id = KSK_disband_kessoku
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_disband_kessoku"
+	}
+	relative_position_id = KSK_eliminate_kita
+	prerequisite = { focus = KSK_eliminate_kita }
+	prerequisite = { focus = KSK_eliminate_bocchi }
+}
+
+shared_focus = {
+	id = KSK_a_clerical_state
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -4
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_clerical_state"
+	}
+	relative_position_id = KSK_disband_kessoku
+	prerequisite = { focus = KSK_disband_kessoku }
+	mutually_exclusive = { focus = KSK_kessoku_psycho }
+}
+
+shared_focus = {
+	id = KSK_martyrise_bocchi
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_martyrise_bocchi"
+	}
+	relative_position_id = KSK_a_clerical_state
+	prerequisite = { focus = KSK_a_clerical_state }
+}
+
+shared_focus = {
+	id = KSK_a_new_religion
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_new_religion"
+	}
+	relative_position_id = KSK_a_clerical_state
+	prerequisite = { focus = KSK_a_clerical_state }
+}
+
+shared_focus = {
+	id = KSK_the_gotou_cult
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_gotou_cult"
+	}
+	relative_position_id = KSK_martyrise_bocchi
+	prerequisite = { focus = KSK_martyrise_bocchi }
+	prerequisite = { focus = KSK_a_new_religion }
+}
+
+shared_focus = {
+	id = KSK_side_with_germany
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_side_with_germany"
+	}
+	relative_position_id = KSK_the_gotou_cult
+	prerequisite = { focus = KSK_the_gotou_cult }
+	mutually_exclusive = { focus = KSK_side_with_japan }
+}
+
+shared_focus = {
+	id = KSK_finish_the_bocchibahn
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_finish_the_bocchibahn"
+	}
+	relative_position_id = KSK_side_with_germany
+	prerequisite = { focus = KSK_side_with_germany }
+}
+
+shared_focus = {
+	id = KSK_ordenstaadt_kessoku
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_ordenstaadt_kessoku"
+	}
+	relative_position_id = KSK_finish_the_bocchibahn
+	prerequisite = { focus = KSK_finish_the_bocchibahn }
+}
+
+shared_focus = {
+	id = KSK_new_shotguitar_generation
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_new_shotguitar_generation"
+	}
+	relative_position_id = KSK_ordenstaadt_kessoku
+	prerequisite = { focus = KSK_ordenstaadt_kessoku }
+}
+
+shared_focus = {
+	id = KSK_seize_the_ryopanthers
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_seize_the_ryopanthers"
+	}
+	relative_position_id = KSK_ordenstaadt_kessoku
+	prerequisite = { focus = KSK_ordenstaadt_kessoku }
+}
+
+shared_focus = {
+	id = KSK_iron_clerk
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_iron_clerk"
+	}
+	relative_position_id = KSK_new_shotguitar_generation
+	prerequisite = { focus = KSK_new_shotguitar_generation }
+	prerequisite = { focus = KSK_seize_the_ryopanthers }
+}
+
+shared_focus = {
+	id = KSK_side_with_japan
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_side_with_japan"
+	}
+	relative_position_id = KSK_the_gotou_cult
+	prerequisite = { focus = KSK_the_gotou_cult }
+	mutually_exclusive = { focus = KSK_side_with_germany }
+}
+
+shared_focus = {
+	id = KSK_bihegemony_in_asia
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_bihegemony_in_asia"
+	}
+	relative_position_id = KSK_side_with_japan
+	prerequisite = { focus = KSK_side_with_japan }
+}
+
+shared_focus = {
+	id = KSK_indochina_expansion
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_indochina_expansion"
+	}
+	relative_position_id = KSK_bihegemony_in_asia
+	prerequisite = { focus = KSK_bihegemony_in_asia }
+}
+
+shared_focus = {
+	id = KSK_modernise_nijikatigers
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_modernise_nijikatigers"
+	}
+	relative_position_id = KSK_indochina_expansion
+	prerequisite = { focus = KSK_indochina_expansion }
+}
+
+shared_focus = {
+	id = KSK_dead_men_marching
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_dead_men_marching"
+	}
+	relative_position_id = KSK_indochina_expansion
+	prerequisite = { focus = KSK_indochina_expansion }
+}
+
+shared_focus = {
+	id = KSK_nuclear_scare
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_nuclear_scare"
+	}
+	relative_position_id = KSK_modernise_nijikatigers
+	prerequisite = { focus = KSK_modernise_nijikatigers }
+	prerequisite = { focus = KSK_dead_men_marching }
+}
+
+shared_focus = {
+	id = KSK_kessoku_psycho
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 4
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_kessoku_psycho"
+	}
+	relative_position_id = KSK_disband_kessoku
+	prerequisite = { focus = KSK_disband_kessoku }
+	mutually_exclusive = { focus = KSK_a_clerical_state }
+}
+
+shared_focus = {
+	id = KSK_business_as_usual
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_business_as_usual"
+	}
+	relative_position_id = KSK_kessoku_psycho
+	prerequisite = { focus = KSK_kessoku_psycho }
+}
+
+shared_focus = {
+	id = KSK_internet_cencorship
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_internet_cencorship"
+	}
+	relative_position_id = KSK_business_as_usual
+	prerequisite = { focus = KSK_business_as_usual }
+}
+
+shared_focus = {
+	id = KSK_totalitarian_liberalism
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_totalitarian_liberalism"
+	}
+	relative_position_id = KSK_business_as_usual
+	prerequisite = { focus = KSK_business_as_usual }
+}
+
+shared_focus = {
+	id = KSK_who_is_bocchi
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_who_is_bocchi"
+	}
+	relative_position_id = KSK_internet_cencorship
+	prerequisite = { focus = KSK_internet_cencorship }
+	prerequisite = { focus = KSK_totalitarian_liberalism }
+}
+
+shared_focus = {
+	id = KSK_a_tough_choice
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_tough_choice"
+	}
+	relative_position_id = KSK_who_is_bocchi
+	prerequisite = { focus = KSK_who_is_bocchi }
+}
+
+shared_focus = {
+	id = KSK_the_west_has_fallen
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_west_has_fallen"
+	}
+	relative_position_id = KSK_a_tough_choice
+	prerequisite = { focus = KSK_a_tough_choice }
+}
+
+shared_focus = {
+	id = KSK_invite_castiglioni
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_invite_castiglioni"
+	}
+	relative_position_id = KSK_the_west_has_fallen
+	prerequisite = { focus = KSK_the_west_has_fallen }
+	mutually_exclusive = { focus = KSK_invite_quandts }
+}
+
+shared_focus = {
+	id = KSK_invite_quandts
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_invite_quandts"
+	}
+	relative_position_id = KSK_the_west_has_fallen
+	prerequisite = { focus = KSK_the_west_has_fallen }
+	mutually_exclusive = { focus = KSK_invite_castiglioni }
+}
+
+shared_focus = {
+	id = KSK_the_times_of_trouble
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_times_of_trouble"
+	}
+	relative_position_id = KSK_invite_castiglioni
+	prerequisite = {
+		focus = KSK_invite_castiglioni
+		focus = KSK_invite_quandts
+	}
+}
+
+shared_focus = {
+	id = KSK_nationalcapitalism
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_nationalcapitalism"
+	}
+	relative_position_id = KSK_the_times_of_trouble
+	prerequisite = { focus = KSK_the_times_of_trouble }
+}
+
+shared_focus = {
+	id = KSK_declare_ostasian_coprosperity_sphere
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_declare_ostasian_coprosperity_sphere"
+	}
+	relative_position_id = KSK_nationalcapitalism
+	prerequisite = { focus = KSK_nationalcapitalism }
+}
+
+shared_focus = {
+	id = KSK_the_west_is_rising
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_west_is_rising"
+	}
+	relative_position_id = KSK_a_tough_choice
+	prerequisite = { focus = KSK_a_tough_choice }
+}
+
+shared_focus = {
+	id = KSK_copenhagen_headquaters
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_copenhagen_headquaters"
+	}
+	relative_position_id = KSK_the_west_is_rising
+	prerequisite = { focus = KSK_the_west_is_rising }
+	mutually_exclusive = { focus = KSK_liberate_the_sea }
+}
+
+shared_focus = {
+	id = KSK_liberate_the_sea
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_liberate_the_sea"
+	}
+	relative_position_id = KSK_the_west_is_rising
+	prerequisite = { focus = KSK_the_west_is_rising }
+	mutually_exclusive = { focus = KSK_copenhagen_headquaters }
+}
+
+shared_focus = {
+	id = KSK_democracies_united
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_democracies_united"
+	}
+	relative_position_id = KSK_copenhagen_headquaters
+	prerequisite = {
+		focus = KSK_copenhagen_headquaters
+		focus = KSK_liberate_the_sea
+	}
+}
+
+shared_focus = {
+	id = KSK_promote_cover_corp
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_promote_cover_corp"
+	}
+	relative_position_id = KSK_democracies_united
+	prerequisite = { focus = KSK_democracies_united }
+}
+
+shared_focus = {
+	id = KSK_liberal_heaven
+	icon = GFX_generic_suspend_constitution
+	cost = 2
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_liberal_heaven"
+	}
+	relative_position_id = KSK_promote_cover_corp
+	prerequisite = { focus = KSK_promote_cover_corp }
 }
