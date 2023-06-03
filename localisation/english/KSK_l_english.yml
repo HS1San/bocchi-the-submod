@@ -21,6 +21,16 @@
   KSK_kikuri.4.t: "[FROM.GetName] Sells Taiwan to Us"
   KSK_kikuri.4.desc: ""
   KSK_kikuri.4.a: "Best trade deal in the history of trade deals."
+  KSK_kikuri.5.t: "Kessoku Invites Us to Fan Club"
+  KSK_kikuri.5.desc: ""
+  KSK_kikuri.5.a: "I love SICK HACK!"
+  KSK_kikuri.5.b: "I don't like anime unfortunately."
+  KSK_kikuri.6.t: "[FROM.GetName] Accepts Invitation"
+  KSK_kikuri.6.desc: ""
+  KSK_kikuri.6.a: "Welcome to the club!"
+  KSK_kikuri.7.t: "[FROM.GetName] Rejects Invitation"
+  KSK_kikuri.7.desc: ""
+  KSK_kikuri.7.a: "Ehhhh??"
 
  # Ideas
   KSK_kikuri_kessoku: "Kessoku Band Promoted"
@@ -31,6 +41,12 @@
   KSK_kikuri_fan_club_desc: ""
   KSK_kikuri_drunk_workers: "Drunk Workers"
   KSK_kikuri_drunk_workers_desc: ""
+  KSK_kikuri_taiwan_purchase: "Taiwan Purchase"
+  KSK_kikuri_taiwan_purchase_desc: ""
+  KSK_kikuri_develop_economy: "Developing Economy"
+  KSK_kikuri_develop_economy_desc: ""
+  KSK_kikuri_develop_military: "Developing Military"
+  KSK_kikuri_develop_military_desc: ""
 
  # National Focuses
   KSK_drunken_democracy: "Drunken Democracy"
@@ -160,6 +176,10 @@
   KSK_kikuri_master_of_improvisation_2: "Master of Improvization"
 
  # Misc
+  # Faction Names
+   KSK_kikuri_faction: "SICK HACK Fan Club"
+
   # Party Names
    KSK_kikuri_democratic: "SH"
    KSK_kikuri_democratic_long: "SICK HACK"
+

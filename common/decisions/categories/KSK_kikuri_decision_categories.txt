@@ -4,6 +4,7 @@ KSK_kikuri_drunkenness_category = {
 	allowed = { original_tag = KSK }
 
 	visible = {
+		has_completed_focus = KSK_symbol_of_alcoholism
 	}
 
 	priority = 5
@@ -14,6 +15,7 @@ KSK_kikuri_alcohol_trade_category = {
 	allowed = { original_tag = KSK }
 
 	visible = {
+		has_completed_focus = KSK_the_alcohol_trade
 	}
 
 	priority = 5
@@ -24,6 +26,7 @@ KSK_kikuri_east_asia_sphere_category = {
 	allowed = { original_tag = KSK }
 
 	visible = {
+		has_completed_focus = KSK_regional_allies
 	}
 
 	priority = 5

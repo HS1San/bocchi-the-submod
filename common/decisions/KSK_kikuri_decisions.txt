@@ -1,2 +1,156 @@
 KSK_kikuri_drunkenness_category = {
+	KSK_kikuri_stay_sober = {
+		icon = generic_civil_support
+
+		allowed = { always = no }
+
+		cost = 25
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_stay_sober"
+		}
+
+		ai_will_do = { base = 10 }
+	}
+	KSK_kikuri_get_drunk = {
+		icon = generic_civil_support
+
+		allowed = { always = no }
+
+		cost = 25
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_get_drunk"
+		}
+
+		ai_will_do = { base = 10 }
+	}
+}
+
+KSK_kikuri_alcohol_trade_category = {
+	KSK_kikuri_trade_alcohol = {
+		icon = GFX_decision_generic_agreement
+
+		allowed = { always = no }
+
+		visible = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		cost = 50
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = -0.10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_trade_alcohol target: [From.GetName]"
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							has_government = democratic
+							has_government = neutrality
+						}
+					}
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				set_country_flag = KSK_industrial_trade_flag
+			}
+			else = {
+				add_offsite_building = { type = arms_factory level = 2 }
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove KSK_kikuri_trade_alcohol target: [From.GetName]"
+			if = {
+				limit = { has_country_flag = KSK_industrial_trade_flag }
+				add_offsite_building = { type = industrial_complex level = -2 }
+				clr_country_flag = KSK_industrial_trade_flag
+			}
+			else = {
+				add_offsite_building = { type = arms_factory level = -2 }
+			}
+		}
+
+		ai_will_do = { base = 10 }
+	}
+}
+
+KSK_kikuri_east_asia_sphere_category = {
+	KSK_kikuri_invite_allies = {
+		icon = GFX_decision_generic_agreement
+
+		allowed = { always = no }
+
+		visible = {
+			FROM = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_invite_allies target: [From.GetName]"
+			FROM = {
+				country_event = { id = KSK_kikuri.5 days = 1 }
+			}
+		}
+
+		ai_will_do = { base = 10 }
+	}
+	KSK_kikuri_develop_allies_economy = {
+		icon = GFX_decision_generic_agreement
+
+		visible = {
+			is_in_faction_with = FROM
+			is_faction_leader = yes
+		}
+
+		target_root_trigger = { has_completed_focus = KSK_regional_allies }
+		target_array = faction_members
+
+		cost = 25
+		days_re_enable = 180
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_develop_allies_economy target: [From.GetName]"
+			FROM = {
+				add_timed_idea = { idea = KSK_kikuri_develop_economy days = 100 }
+			}
+		}
+
+		ai_will_do = { base = 10 }
+	}
+	KSK_kikuri_develop_allies_military = {
+		icon = GFX_decision_generic_agreement
+
+		allowed = { always = no }
+
+		visible = {
+			is_in_faction_with = FROM
+			is_faction_leader = yes
+		}
+
+		target_root_trigger = { has_completed_focus = KSK_regional_allies }
+		target_array = faction_members
+
+		cost = 25
+		days_re_enable = 180
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete KSK_kikuri_develop_allies_military target: [From.GetName]"
+			FROM = {
+				add_timed_idea = { idea = KSK_kikuri_develop_military days = 100 }
+			}
+		}
+
+		ai_will_do = { base = 10 }
+	}
 }

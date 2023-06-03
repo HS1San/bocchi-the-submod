@@ -8021,7 +8021,10 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_symbol_of_alcoholism"
 		unlock_decision_category_tooltip = KSK_kikuri_drunkenness_category
-		# TODO
+		hidden_effect = {
+			activate_targeted_decision = { target = THIS decision = KSK_kikuri_stay_sober }
+			activate_targeted_decision = { target = THIS decision = KSK_kikuri_get_drunk }
+		}
 	}
 	relative_position_id = KSK_drunken_democracy
 	prerequisite = { focus = KSK_drunken_democracy }
@@ -8085,6 +8088,9 @@ shared_focus = {
 	cost = 7
 	x = 1
 	y = 1
+	available = {
+		has_completed_focus = KSK_symbol_of_alcoholism
+	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_high_quality_sake"
 		# TODO
@@ -8111,7 +8117,14 @@ shared_focus = {
 			add_political_power = 150
 		}
 		unlock_decision_category_tooltip = KSK_kikuri_alcohol_trade_category
-		# TODO
+		hidden_effect = {
+			activate_targeted_decision = { target = ENG decision = KSK_kikuri_trade_alcohol }
+			activate_targeted_decision = { target = FRA decision = KSK_kikuri_trade_alcohol }
+			activate_targeted_decision = { target = GER decision = KSK_kikuri_trade_alcohol }
+			activate_targeted_decision = { target = ITA decision = KSK_kikuri_trade_alcohol }
+			activate_targeted_decision = { target = SOV decision = KSK_kikuri_trade_alcohol }
+			activate_targeted_decision = { target = USA decision = KSK_kikuri_trade_alcohol }
+		}
 	}
 	relative_position_id = KSK_alcoholic_workforce
 	prerequisite = { focus = KSK_alcoholic_workforce }
@@ -8296,7 +8309,15 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_regional_allies"
 		unlock_decision_category_tooltip = KSK_kikuri_east_asia_sphere_category
-		# TODO
+		activate_targeted_decision = { target = CAM decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = INS decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = LAO decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = MAL decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = PHI decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = SIA decision = KSK_kikuri_invite_allies }
+		activate_targeted_decision = { target = VIN decision = KSK_kikuri_invite_allies }
+		set_rule = { can_create_factions = yes }
+		create_faction = KSK_kikuri_faction
 	}
 	relative_position_id = KSK_kessoku_foreign_investment
 	prerequisite = { focus = KSK_kessoku_foreign_investment }
@@ -8311,8 +8332,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_regional_dominance"
-		unlock_decision_category_tooltip = KSK_kikuri_east_asia_sphere_category
-		# TODO
+		set_rule = { can_create_factions = yes }
+		set_rule = { can_declare_war_on_same_ideology = yes }
+		set_rule = { can_puppet = yes }
+		create_faction = KSK_kikuri_faction
+		add_ideas = KSK_kikuri_expansionism
 	}
 	relative_position_id = KSK_the_wakaru_ultimatum
 	prerequisite = { focus = KSK_the_wakaru_ultimatum }

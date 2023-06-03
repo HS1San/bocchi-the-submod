@@ -11,14 +11,14 @@ country_event = {
 	option = {
 		name = KSK_kikuri.1.a
 		ai_chance = { factor = 3 }
-		KSK = {
+		FROM = {
 			country_event = { id = KSK_kikuri.3 days = 1 }
 		}
 	}
 	option = {
 		name = KSK_kikuri.1.b
 		ai_chance = { factor = 2 }
-		KSK = {
+		FROM = {
 			country_event = { id = KSK_kikuri.2 days = 1 }
 		}
 	}
@@ -27,12 +27,12 @@ country_event = {
 		ai_chance = { factor = 1 }
 		effect_tooltip = {
 			add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1a days = 365 }
-			KSK = {
+			FROM = {
 				add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1b days = 365 }
 				transfer_state = 524
 			}
 		}
-		KSK = {
+		FROM = {
 			country_event = { id = KSK_kikuri.4 days = 1 }
 		}
 	}
@@ -88,7 +88,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = KSK_kikuri.3.a
+		name = KSK_kikuri.3.b
 		ai_chance = { factor = 1 }
 	}
 }
@@ -104,10 +104,63 @@ country_event = {
 	option = {
 		name = KSK_kikuri.4.a
 		ai_chance = { factor = 1 }
-		JAP = {
+		FROM = {
 			add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1a days = 365 }
 		}
 		add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1b days = 365 }
 		transfer_state = 524
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.5
+	title = KSK_kikuri.5.t
+	desc = KSK_kikuri.5.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.5.a
+		ai_chance = { factor = 1 }
+		FROM = {
+			country_event = { id = KSK_kikuri.6 days = 1 }
+		}
+	}
+	option = {
+		name = KSK_kikuri.5.b
+		ai_chance = { factor = 1 }
+		FROM = {
+			country_event = { id = KSK_kikuri.7 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.6
+	title = KSK_kikuri.6.t
+	desc = KSK_kikuri.6.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.6.a
+		ai_chance = { factor = 1 }
+		add_to_faction = FROM
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.7
+	title = KSK_kikuri.7.t
+	desc = KSK_kikuri.7.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.7.a
+		ai_chance = { factor = 1 }
 	}
 }
