@@ -8013,7 +8013,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_symbol_of_alcoholism
-	icon = GFX_goal_generic_propaganda
+	icon = GFX_KSK_symbol_of_alcoholism
 	cost = 7
 	x = 1
 	y = 1
@@ -8094,7 +8094,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_alcohol_trade
-	icon = GFX_KSK_the_alcohol_trade
+	icon = GFX_goal_generic_positive_trade_relations
 	cost = 7
 	x = 1
 	y = 1
