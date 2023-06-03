@@ -155,6 +155,10 @@
   KSK_liberal_heaven: "Liberal Heaven"
   KSK_liberal_heaven_desc: "placeholder"
 
+ # Traits
+  KSK_kikuri_master_of_improvisation_1: "Master of Improvization"
+  KSK_kikuri_master_of_improvisation_2: "Master of Improvization"
+
  # Misc
   # Party Names
    KSK_kikuri_democratic: "SH"

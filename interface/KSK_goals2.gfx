@@ -42,6 +42,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_KSK_prepare_for_big_trouble"
+		texturefile = "gfx/interface/goals/KSK_prepare_for_big_trouble.png"
+	}
+
+	SpriteType = {
 		name = "GFX_KSK_promote_kessoku_band"
 		texturefile = "gfx/interface/goals/KSK_promote_kessoku_band.png"
 	}
