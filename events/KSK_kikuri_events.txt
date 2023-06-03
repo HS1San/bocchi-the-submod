@@ -1,0 +1,44 @@
+﻿add_namespace = KSK_kikuri
+
+country_event = {
+	id = KSK_kikuri.1
+	title = KSK_kikuri.1.t
+	desc = KSK_kikuri.1.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.1.a
+		ai_chance = { factor = 3 }
+	}
+	option = {
+		name = KSK_kikuri.1.b
+		ai_chance = { factor = 2 }
+	}
+	option = {
+		name = KSK_kikuri.1.c
+		ai_chance = { factor = 1 }
+		KSK = {
+			transfer_state = 671
+		}
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.2
+	title = KSK_kikuri.2.t
+	desc = KSK_kikuri.2.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.2.a
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = KSK_kikuri.2.b
+		ai_chance = { factor = 1 }
+	}
+}
