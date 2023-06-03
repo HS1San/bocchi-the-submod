@@ -7965,7 +7965,7 @@
 
 shared_focus = {
 	id = KSK_drunken_democracy
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_drunken_democracy
 	cost = 7
 	x = -28
 	y = 8
@@ -7983,7 +7983,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_promote_kessoku_band
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_promote_kessoku_band
 	cost = 7
 	x = -3
 	y = 7
@@ -7998,7 +7998,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_promote_sick_hack
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_promote_sick_hack
 	cost = 7
 	x = -1
 	y = 7
@@ -8013,13 +8013,13 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_symbol_of_alcoholism
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_propaganda
 	cost = 7
 	x = 1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_symbol_of_alcoholism"
-		unlock_decision_category_tooltip = KS_kikuri_drunkenness_category
+		unlock_decision_category_tooltip = KSK_kikuri_drunkenness_category
 		# TODO
 	}
 	relative_position_id = KSK_drunken_democracy
@@ -8028,7 +8028,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_establish_onikoro
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_establish_onikoro
 	cost = 7
 	x = -4
 	y = 2
@@ -8049,7 +8049,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_folt_performances
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_folt_performances
 	cost = 7
 	x = 1
 	y = 1
@@ -8066,7 +8066,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_alcoholic_workforce
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_alcoholic_workforce
 	cost = 7
 	x = -1
 	y = 1
@@ -8080,7 +8080,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_high_quality_sake
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_high_quality_sake
 	cost = 7
 	x = 1
 	y = 1
@@ -8094,7 +8094,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_alcohol_trade
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_the_alcohol_trade
 	cost = 7
 	x = 1
 	y = 1
@@ -8109,7 +8109,8 @@ shared_focus = {
 		else = {
 			add_political_power = 150
 		}
-		add_offsite_building = { type = industrial_complex level = 2 }
+		unlock_decision_category_tooltip = KSK_kikuri_alcohol_trade_category
+		# TODO
 	}
 	relative_position_id = KSK_alcoholic_workforce
 	prerequisite = { focus = KSK_alcoholic_workforce }
@@ -8118,7 +8119,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_world_is_mine
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_the_world_is_mine
 	cost = 7
 	x = 0
 	y = 2
@@ -8133,7 +8134,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_im_the_only_ghost
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_im_the_only_ghost
 	cost = 7
 	x = -1
 	y = 1
@@ -8141,6 +8142,18 @@ shared_focus = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_im_the_only_ghost"
 		remove_ideas = ksk_powerless_leader
 		# TODO
+		set_cosmetic_tag = HSKE
+		KSK_kikuri_hiroi = {
+			if = {
+				limit = { has_ideology = liberalism }
+				promote_character = liberalism
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			name = KSK_kikuri_democratic
+			long_name = KSK_kikuri_democratic_long
+		}
 	}
 	relative_position_id = KSK_symbol_of_alcoholism
 	prerequisite = { focus = KSK_symbol_of_alcoholism }
@@ -8148,7 +8161,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_improvised_governance
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_focus_generic_improve_the_administration
 	cost = 7
 	x = -1
 	y = 1
@@ -8163,7 +8176,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_chemistry_within_chaos
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_chemistry_within_chaos
 	cost = 7
 	x = 1
 	y = 1
@@ -8178,7 +8191,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_a_new_unity_band
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_national_unity
 	cost = 7
 	x = 1
 	y = 1
@@ -8194,7 +8207,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_prepare_for_big_trouble
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_KSK_prepare_for_big_trouble
 	cost = 7
 	x = 0
 	y = 2
@@ -8211,13 +8224,17 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_taiwan_protectorate
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_dangerous_deal
 	cost = 7
 	x = -3
 	y = 2
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_taiwan_protectorate"
-		# TODO
+		524 = {
+			owner = {
+				country_event = { id = KSK_kikuri.1 days = 1 }
+			}
+		}
 	}
 	relative_position_id = KSK_the_world_is_mine
 	prerequisite = { focus = KSK_the_world_is_mine }
@@ -8225,13 +8242,19 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_kessoku_foreign_investment
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_intelligence_exchange
 	cost = 7
 	x = 1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_kessoku_foreign_investment"
-		# TODO
+		add_tech_bonus = {
+			name = KSK_kessoku_foreign_investment
+			category = industry
+			bonus = 0.5
+			uses = 2
+		}
+		add_offsite_building = { type = industrial_complex level = 2 }
 	}
 	relative_position_id = KSK_the_alcohol_trade
 	prerequisite = { focus = KSK_the_alcohol_trade }
@@ -8241,7 +8264,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_wakaru_ultimatum
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_forceful_treaty
 	cost = 7
 	x = 3
 	y = 1
@@ -8259,12 +8282,13 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_regional_allies
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_major_alliance
 	cost = 7
 	x = 0
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_regional_allies"
+		unlock_decision_category_tooltip = KSK_kikuri_east_asia_sphere_category
 		# TODO
 	}
 	relative_position_id = KSK_kessoku_foreign_investment
@@ -8274,12 +8298,13 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_regional_dominance
-	icon = GFX_goal_bocchi_fire
+	icon = GFX_goal_generic_more_territorial_claims
 	cost = 7
 	x = 0
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_regional_dominance"
+		unlock_decision_category_tooltip = KSK_kikuri_east_asia_sphere_category
 		# TODO
 	}
 	relative_position_id = KSK_the_wakaru_ultimatum

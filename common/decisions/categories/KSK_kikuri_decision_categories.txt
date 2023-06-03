@@ -6,5 +6,25 @@ KSK_kikuri_drunkenness_category = {
 	visible = {
 	}
 
-	priority = 10
+	priority = 5
+}
+KSK_kikuri_alcohol_trade_category = {
+	icon = GFX_decision_category_operation_noko
+
+	allowed = { original_tag = KSK }
+
+	visible = {
+	}
+
+	priority = 5
+}
+KSK_kikuri_east_asia_sphere_category = {
+	icon = GFX_decision_category_operation_noko
+
+	allowed = { original_tag = KSK }
+
+	visible = {
+	}
+
+	priority = 5
 }

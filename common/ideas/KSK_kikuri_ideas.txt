@@ -44,5 +44,45 @@ ideas = {
 				production_factory_max_efficiency_factor = -0.10
 			}
 		}
+		KSK_kikuri_taiwan_purchase_1a = {
+			picture = ksk_unpopular
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				consumer_goods_factor = -0.10
+			}
+		}
+		KSK_kikuri_taiwan_purchase_1b = {
+			picture = ksk_unpopular
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				consumer_goods_factor = 0.20
+			}
+		}
+		KSK_kikuri_taiwan_purchase_2a = {
+			picture = ksk_unpopular
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				consumer_goods_factor = -0.20
+			}
+		}
+		KSK_kikuri_taiwan_purchase_2b = {
+			picture = ksk_unpopular
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				consumer_goods_factor = 0.40
+			}
+		}
 	}
 }

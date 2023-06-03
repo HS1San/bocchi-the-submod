@@ -11,16 +11,29 @@ country_event = {
 	option = {
 		name = KSK_kikuri.1.a
 		ai_chance = { factor = 3 }
+		KSK = {
+			country_event = { id = KSK_kikuri.3 days = 1 }
+		}
 	}
 	option = {
 		name = KSK_kikuri.1.b
 		ai_chance = { factor = 2 }
+		KSK = {
+			country_event = { id = KSK_kikuri.2 days = 1 }
+		}
 	}
 	option = {
 		name = KSK_kikuri.1.c
 		ai_chance = { factor = 1 }
+		effect_tooltip = {
+			add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1a days = 365 }
+			KSK = {
+				add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1b days = 365 }
+				transfer_state = 524
+			}
+		}
 		KSK = {
-			transfer_state = 671
+			country_event = { id = KSK_kikuri.4 days = 1 }
 		}
 	}
 }
@@ -36,9 +49,65 @@ country_event = {
 	option = {
 		name = KSK_kikuri.2.a
 		ai_chance = { factor = 1 }
+		FROM = {
+			add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_2a days = 365 }
+		}
+		add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_2b days = 365 }
+		transfer_state = 524
 	}
 	option = {
 		name = KSK_kikuri.2.b
 		ai_chance = { factor = 1 }
+		create_wargoal = {
+			target = 524.owner
+			type = take_state_focus
+			generator = { 524 }
+		}
+	}
+	option = {
+		name = KSK_kikuri.2.c
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.3
+	title = KSK_kikuri.3.t
+	desc = KSK_kikuri.3.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.3.a
+		ai_chance = { factor = 1 }
+		create_wargoal = {
+			target = 524.owner
+			type = take_state_focus
+			generator = { 524 }
+		}
+	}
+	option = {
+		name = KSK_kikuri.3.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = KSK_kikuri.4
+	title = KSK_kikuri.4.t
+	desc = KSK_kikuri.4.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_kikuri.4.a
+		ai_chance = { factor = 1 }
+		JAP = {
+			add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1a days = 365 }
+		}
+		add_timed_idea = { idea = KSK_kikuri_taiwan_purchase_1b days = 365 }
+		transfer_state = 524
 	}
 }
