@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_KSK_kikuri_kessoku"
+		texturefile = "gfx/interface/ideas/KSK_kikuri_kessoku.png"
+	}
+	spriteType = {
+		name = "GFX_idea_KSK_kikuri_sick_hack"
+		texturefile = "gfx/interface/ideas/KSK_kikuri_sick_hack.png"
+	}
+	spriteType = {
+		name = "GFX_idea_KSK_kikuri_fan_club"
+		texturefile = "gfx/interface/ideas/KSK_kikuri_fan_club.png"
+	}
+	spriteType = {
+		name = "GFX_idea_KSK_kikuri_drunk_workers"
+		texturefile = "gfx/interface/ideas/KSK_kikuri_drunk_workers.png"
+	}
+}
