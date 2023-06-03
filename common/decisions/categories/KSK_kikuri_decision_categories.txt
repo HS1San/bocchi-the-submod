@@ -1,0 +1,10 @@
+KSK_kikuri_drunkenness_category = {
+	icon = GFX_decision_category_operation_noko
+
+	allowed = { original_tag = KSK }
+
+	visible = {
+	}
+
+	priority = 10
+}
