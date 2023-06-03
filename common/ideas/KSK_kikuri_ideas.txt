@@ -46,7 +46,7 @@ ideas = {
 		}
 		KSK_kikuri_taiwan_purchase_1a = {
 			name = KSK_kikuri_taiwan_purchase
-			picture = ksk_unpopular
+			picture = generic_foreign_capital
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -57,7 +57,7 @@ ideas = {
 		}
 		KSK_kikuri_taiwan_purchase_1b = {
 			name = KSK_kikuri_taiwan_purchase
-			picture = ksk_unpopular
+			picture = generic_foreign_capital
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -68,7 +68,7 @@ ideas = {
 		}
 		KSK_kikuri_taiwan_purchase_2a = {
 			name = KSK_kikuri_taiwan_purchase
-			picture = ksk_unpopular
+			picture = generic_foreign_capital
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -79,7 +79,7 @@ ideas = {
 		}
 		KSK_kikuri_taiwan_purchase_2b = {
 			name = KSK_kikuri_taiwan_purchase
-			picture = ksk_unpopular
+			picture = generic_foreign_capital
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -89,7 +89,7 @@ ideas = {
 			}
 		}
 		KSK_kikuri_expansionism = {
-			picture = ksk_unpopular
+			picture = generic_manpower_bonus
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -100,7 +100,7 @@ ideas = {
 			}
 		}
 		KSK_kikuri_develop_economy = {
-			picture = ksk_unpopular
+			picture = generic_goods_red_bonus
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
@@ -111,7 +111,7 @@ ideas = {
 			}
 		}
 		KSK_kikuri_develop_military = {
-			picture = ksk_unpopular
+			picture = generic_infantry_bonus
 			
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
