@@ -8025,10 +8025,18 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_symbol_of_alcoholism"
-		unlock_decision_category_tooltip = KSK_kikuri_drunkenness_category
-		hidden_effect = {
-			activate_targeted_decision = { target = THIS decision = KSK_kikuri_stay_sober }
-			activate_targeted_decision = { target = THIS decision = KSK_kikuri_get_drunk }
+		KSK_kikuri_hiroi = {
+			hidden_effect = {
+				remove_trait = {
+					slot = political_advisor
+					trait = drunken_strategy
+				}
+				add_country_leader_trait = KSK_kikuri_drunk
+			}
+			add_trait = {
+				slot = political_advisor
+				trait = KSK_kikuri_drunk_strategy_2
+			}
 		}
 	}
 	relative_position_id = KSK_drunken_democracy
@@ -8093,12 +8101,9 @@ shared_focus = {
 	cost = 7
 	x = 1
 	y = 1
-	available = {
-		has_completed_focus = KSK_symbol_of_alcoholism
-	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_high_quality_sake"
-		# TODO
+		add_research_slot = 1
 	}
 	relative_position_id = KSK_establish_onikoro
 	prerequisite = { focus = KSK_establish_onikoro }
@@ -8171,6 +8176,7 @@ shared_focus = {
 			name = KSK_kikuri_democratic
 			long_name = KSK_kikuri_democratic_long
 		}
+		set_cosmetic_tag - SICK_HACK
 	}
 	relative_position_id = KSK_symbol_of_alcoholism
 	prerequisite = {
@@ -8314,13 +8320,15 @@ shared_focus = {
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_regional_allies"
 		unlock_decision_category_tooltip = KSK_kikuri_east_asia_sphere_category
-		activate_targeted_decision = { target = CAM decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = INS decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = LAO decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = MAL decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = PHI decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = SIA decision = KSK_kikuri_invite_allies }
-		activate_targeted_decision = { target = VIN decision = KSK_kikuri_invite_allies }
+		hidden_effect = {
+			activate_targeted_decision = { target = CAM decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = INS decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = LAO decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = MAL decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = PHI decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = SIA decision = KSK_kikuri_invite_allies }
+			activate_targeted_decision = { target = VIN decision = KSK_kikuri_invite_allies }
+		}
 		set_rule = { can_create_factions = yes }
 		create_faction = KSK_kikuri_faction
 	}
