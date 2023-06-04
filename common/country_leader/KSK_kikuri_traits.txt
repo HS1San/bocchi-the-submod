@@ -1,4 +1,12 @@
 leader_traits = {
+	KSK_kikuri_drunk = {
+		consumer_goods_factor = 0.05
+	}
+	KSK_kikuri_drunk_strategy_2 = {
+		random = no
+		political_power_factor = 0.15
+		war_support_weekly = 0.005
+	}
 	KSK_kikuri_master_of_improvisation_1 = {
 		random = no
 		consumer_goods_factor = -0.05

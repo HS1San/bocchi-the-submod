@@ -3,33 +3,48 @@
  # Characters
   KSK_kikuri_hiroi_desc: ""
 
+ # Decisions
+  KSK_kikuri_alcohol_trade_category: "Alcohol Trade"
+  KSK_kikuri_alcohol_trade_category_desc: ""
+  KSK_kikuri_trade_alcohol: "Trade Alcohol to [FROM.GetName]"
+  KSK_kikuri_trade_alcohol_desc: ""
+
+  KSK_kikuri_east_asia_sphere_category: "SICK HACK Fan Club Meeting"
+  KSK_kikuri_east_asia_sphere_category_desc: ""
+  KSK_kikuri_invite_allies: "Invite [FROM.GetName] to Fan Club"
+  KSK_kikuri_invite_allies_desc: ""
+  KSK_kikuri_develop_allies_economy: "Economy Fan Meeting"
+  KSK_kikuri_develop_allies_economy_desc: ""
+  KSK_kikuri_develop_allies_military: "Military Fan Meeting"
+  KSK_kikuri_develop_allies_military_desc: ""
+
  # Events
   KSK_kikuri.1.t: "Kessoku Wants to Buy Taiwan"
-  KSK_kikuri.1.desc: ""
+  KSK_kikuri.1.desc: "We have recently received an offer from some suspicious girls to buy our Taiwanese colony. While this seems like a poor attempt at seizing territory, they are offering a hefty sum for it."
   KSK_kikuri.1.a: "Sounds like a scam to me."
   KSK_kikuri.1.b: "Double the price."
   KSK_kikuri.1.c: "Why yes of course I love money."
   KSK_kikuri.2.t: "[FROM.GetName] Asks for More Money"
-  KSK_kikuri.2.desc: ""
+  KSK_kikuri.2.desc: "The [FROM.GetAdjective] has asked for more money for Taiwan. Kikuri went into a drunken uproar and had to be calmed down."
   KSK_kikuri.2.a: "We will just print more money later."
   KSK_kikuri.2.b: "Let's \"buy\" it another way."
   KSK_kikuri.2.c: "I never wanted that island anyways!"
   KSK_kikuri.3.t: "[FROM.GetName] Refuses!"
-  KSK_kikuri.3.desc: ""
+  KSK_kikuri.3.desc: "The [FROM.GetAdjective] has refused our generous offer. Kikuri went into a drunken uproar and had to be calmed down."
   KSK_kikuri.3.a: "Let's \"buy\" it another way."
   KSK_kikuri.3.b: "I never wanted that island anyways!"
   KSK_kikuri.4.t: "[FROM.GetName] Sells Taiwan to Us"
-  KSK_kikuri.4.desc: ""
+  KSK_kikuri.4.desc: "The [FROM.GetAdjective] has accepted our generous offer. Kikuri celebrated by drinking three cans of sake."
   KSK_kikuri.4.a: "Best trade deal in the history of trade deals."
   KSK_kikuri.5.t: "Kessoku Invites Us to Fan Club"
-  KSK_kikuri.5.desc: ""
+  KSK_kikuri.5.desc: "We've received an invitation to join the fan club of the band SICK HACK. While the being a member of a fan club of a popular band has its benefits, the invitation has a rather peculiar term for us to be part of their military coalition to join."
   KSK_kikuri.5.a: "I love SICK HACK!"
   KSK_kikuri.5.b: "I don't like anime unfortunately."
   KSK_kikuri.6.t: "[FROM.GetName] Accepts Invitation"
-  KSK_kikuri.6.desc: ""
-  KSK_kikuri.6.a: "Welcome to the club!"
+  KSK_kikuri.6.desc: "Kikuri celebrated by drinking two cans of sake."
+  KSK_kikuri.6.a: "Welcome, new fan club member!"
   KSK_kikuri.7.t: "[FROM.GetName] Rejects Invitation"
-  KSK_kikuri.7.desc: ""
+  KSK_kikuri.7.desc: "Kikuri was dejected by the response and went to drink for the rest of the day."
   KSK_kikuri.7.a: "Ehhhh??"
 
  # Ideas
@@ -43,6 +58,8 @@
   KSK_kikuri_drunk_workers_desc: ""
   KSK_kikuri_taiwan_purchase: "Taiwan Purchase"
   KSK_kikuri_taiwan_purchase_desc: ""
+  KSK_kikuri_expansionism: "Drunken Expansionism"
+  KSK_kikuri_expansionism_desc: ""
   KSK_kikuri_develop_economy: "Developing Economy"
   KSK_kikuri_develop_economy_desc: ""
   KSK_kikuri_develop_military: "Developing Military"
@@ -172,6 +189,8 @@
   KSK_liberal_heaven_desc: "placeholder"
 
  # Traits
+  KSK_kikuri_drunk: "Drunk"
+  KSK_kikuri_drunk_strategy_2: "Drunken Strategy"
   KSK_kikuri_master_of_improvisation_1: "Master of Improvization"
   KSK_kikuri_master_of_improvisation_2: "Master of Improvization"
 
@@ -182,4 +201,3 @@
   # Party Names
    KSK_kikuri_democratic: "SH"
    KSK_kikuri_democratic_long: "SICK HACK"
-
