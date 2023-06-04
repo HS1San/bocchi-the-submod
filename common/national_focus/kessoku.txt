@@ -37,7 +37,7 @@
 
 		completion_reward = {
 			navy_experience = 10
-		    air_experience - 10
+		    air_experience = 10
 			random_owned_state = {
 				limit = {
 					is_in_home_area = yes
@@ -1511,6 +1511,7 @@
 		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_kita_start }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
+		mutually_exclusive = { focus = KSK_its_over }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2452,6 +2453,7 @@
 		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_kita_start }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
+		mutually_exclusive = { focus = KSK_its_over }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3372,6 +3374,7 @@
 		mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
 		mutually_exclusive = { focus = KSK_kita_start }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
+		mutually_exclusive = { focus = KSK_its_over }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5568,6 +5571,7 @@
 		mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
 		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
+		mutually_exclusive = { focus = KSK_its_over }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -6929,7 +6933,7 @@
 					limit = {
 						914 = { is_owned_and_controlled_by = KSK }
 					}
-					activate_targeted_decision = { target =  decision = KSK_arms_factory }
+					activate_targeted_decision = { target = KSK_arms_factory }
 				}
 			}
 			custom_effect_tooltip = KSK_arms_factory_tt
@@ -7980,6 +7984,7 @@ shared_focus = {
 	mutually_exclusive = { focus = KSK_rattle_rattle }
 	mutually_exclusive = { focus = KSK_heaven_for_death }
 	mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
+	mutually_exclusive = { focus = KSK_its_over }
 }
 
 shared_focus = {
@@ -8345,7 +8350,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_its_over
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_its_over
 	cost = 2
 	x = -40
 	y = 1
@@ -8354,11 +8359,16 @@ shared_focus = {
 	}
 	relative_position_id = KSK_political_turmoil
 	prerequisite = { focus = KSK_political_turmoil }
+	mutually_exclusive = { focus = KSK_kita_start }
+	mutually_exclusive = { focus = KSK_rattle_rattle }
+	mutually_exclusive = { focus = KSK_heaven_for_death }
+	mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
+	mutually_exclusive = { focus = KSK_drunken_democracy }
 }
 
 shared_focus = {
 	id = KSK_eliminate_ryo
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_eliminate_ryo
 	cost = 2
 	x = -1
 	y = 1
@@ -8371,7 +8381,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_eliminate_kita
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_eliminate_kita
 	cost = 2
 	x = 0
 	y = 1
@@ -8384,7 +8394,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_eliminate_nijika
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_eliminate_nijika
 	cost = 2
 	x = 1
 	y = 1
@@ -8397,7 +8407,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_eliminate_bocchi
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_eliminate_bocchi
 	cost = 2
 	x = 0
 	y = 1
@@ -8410,7 +8420,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_disband_kessoku
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_disband_kessoku
 	cost = 2
 	x = 1
 	y = 1
@@ -8424,7 +8434,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_a_clerical_state
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_a_clerical_state
 	cost = 2
 	x = -4
 	y = 1
@@ -8438,9 +8448,9 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_martyrise_bocchi
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_martyrise_bocchi
 	cost = 2
-	x = -2
+	x = -1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_martyrise_bocchi"
@@ -8451,9 +8461,9 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_a_new_religion
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_propaganda
 	cost = 2
-	x = 0
+	x = 1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_new_religion"
@@ -8464,7 +8474,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_gotou_cult
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_attack_allies
 	cost = 2
 	x = 1
 	y = 1
@@ -8478,7 +8488,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_side_with_germany
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_support_fascism
 	cost = 2
 	x = -1
 	y = 1
@@ -8492,7 +8502,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_finish_the_bocchibahn
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_army_motorized
 	cost = 2
 	x = 0
 	y = 1
@@ -8505,46 +8515,48 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_ordenstaadt_kessoku
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_ordenstaadt_kessoku
 	cost = 2
-	x = 0
+	x = -2
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_ordenstaadt_kessoku"
 	}
-	relative_position_id = KSK_finish_the_bocchibahn
-	prerequisite = { focus = KSK_finish_the_bocchibahn }
+	relative_position_id = KSK_side_with_germany
+	prerequisite = { focus = KSK_side_with_germany}
 }
 
 shared_focus = {
 	id = KSK_new_shotguitar_generation
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_new_shotguitar_generation
 	cost = 2
-	x = -2
+	x = 0
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_new_shotguitar_generation"
 	}
 	relative_position_id = KSK_ordenstaadt_kessoku
 	prerequisite = { focus = KSK_ordenstaadt_kessoku }
+	prerequisite = { focus =  KSK_finish_the_bocchibahn }
 }
 
 shared_focus = {
 	id = KSK_seize_the_ryopanthers
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_wolf_pack
 	cost = 2
-	x = 0
+	x = 2
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_seize_the_ryopanthers"
 	}
 	relative_position_id = KSK_ordenstaadt_kessoku
 	prerequisite = { focus = KSK_ordenstaadt_kessoku }
+	prerequisite = { focus =  KSK_finish_the_bocchibahn }
 }
 
 shared_focus = {
 	id = KSK_iron_clerk
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_CAS
 	cost = 2
 	x = 1
 	y = 1
@@ -8558,7 +8570,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_side_with_japan
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_generic_japanese_imperial_glory
 	cost = 2
 	x = 1
 	y = 1
@@ -8572,9 +8584,9 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_bihegemony_in_asia
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_bihegemony_in_asia
 	cost = 2
-	x = 0
+	x = 2
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_bihegemony_in_asia"
@@ -8585,20 +8597,20 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_indochina_expansion
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_small_arms
 	cost = 2
-	x = 0
-	y = 1
+	x = -2
+	y = 0
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_indochina_expansion"
 	}
 	relative_position_id = KSK_bihegemony_in_asia
-	prerequisite = { focus = KSK_bihegemony_in_asia }
+	prerequisite = { focus = KSK_side_with_japan }
 }
 
 shared_focus = {
 	id = KSK_modernise_nijikatigers
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_army_tanks
 	cost = 2
 	x = 0
 	y = 1
@@ -8607,11 +8619,12 @@ shared_focus = {
 	}
 	relative_position_id = KSK_indochina_expansion
 	prerequisite = { focus = KSK_indochina_expansion }
+	prerequisite = { focus = KSK_bihegemony_in_asia }
 }
 
 shared_focus = {
 	id = KSK_dead_men_marching
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_more_territorial_claims
 	cost = 2
 	x = 2
 	y = 1
@@ -8620,11 +8633,12 @@ shared_focus = {
 	}
 	relative_position_id = KSK_indochina_expansion
 	prerequisite = { focus = KSK_indochina_expansion }
+	prerequisite = { focus = KSK_bihegemony_in_asia }
 }
 
 shared_focus = {
 	id = KSK_nuclear_scare
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_wonderweapons
 	cost = 2
 	x = 1
 	y = 1
@@ -8638,7 +8652,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_kessoku_psycho
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_kessoku_psycho
 	cost = 2
 	x = 4
 	y = 1
@@ -8652,7 +8666,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_business_as_usual
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_generic_self_management
 	cost = 2
 	x = 0
 	y = 1
@@ -8665,7 +8679,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_internet_cencorship
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_generic_strike_at_democracy1
 	cost = 2
 	x = -1
 	y = 1
@@ -8678,7 +8692,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_totalitarian_liberalism
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_generic_territory_or_war
 	cost = 2
 	x = 1
 	y = 1
@@ -8690,13 +8704,13 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = KSK_who_is_bocchi
-	icon = GFX_generic_suspend_constitution
+	id = KSK_a_tough_choice
+	icon = GFX_KSK_a_tough_choice
 	cost = 2
 	x = 1
 	y = 1
 	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus KSK_who_is_bocchi"
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_tough_choice"
 	}
 	relative_position_id = KSK_internet_cencorship
 	prerequisite = { focus = KSK_internet_cencorship }
@@ -8704,21 +8718,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = KSK_a_tough_choice
-	icon = GFX_generic_suspend_constitution
-	cost = 2
-	x = 0
-	y = 1
-	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_tough_choice"
-	}
-	relative_position_id = KSK_who_is_bocchi
-	prerequisite = { focus = KSK_who_is_bocchi }
-}
-
-shared_focus = {
 	id = KSK_the_west_has_fallen
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_ger_reichskommisariats
 	cost = 2
 	x = -2
 	y = 1
@@ -8727,11 +8728,12 @@ shared_focus = {
 	}
 	relative_position_id = KSK_a_tough_choice
 	prerequisite = { focus = KSK_a_tough_choice }
+	mutually_exclusive = { focus = KSK_the_west_is_rising }
 }
 
 shared_focus = {
 	id = KSK_invite_castiglioni
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_invite_castiglioni
 	cost = 2
 	x = -1
 	y = 1
@@ -8745,7 +8747,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_invite_quandts
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_invite_quandts
 	cost = 2
 	x = 1
 	y = 1
@@ -8759,7 +8761,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_the_times_of_trouble
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_the_times_of_trouble
 	cost = 2
 	x = 1
 	y = 1
@@ -8775,9 +8777,9 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_nationalcapitalism
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_nationalcapitalism
 	cost = 2
-	x = 0
+	x = 1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_nationalcapitalism"
@@ -8788,20 +8790,20 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_declare_ostasian_coprosperity_sphere
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_declare_ostasian_coprosperity_sphere
 	cost = 2
-	x = 0
+	x = -1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_declare_ostasian_coprosperity_sphere"
 	}
-	relative_position_id = KSK_nationalcapitalism
-	prerequisite = { focus = KSK_nationalcapitalism }
+	relative_position_id = KSK_the_times_of_trouble
+	prerequisite = { focus = KSK_the_times_of_trouble }
 }
 
 shared_focus = {
 	id = KSK_the_west_is_rising
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_support_democracy
 	cost = 2
 	x = 2
 	y = 1
@@ -8810,11 +8812,12 @@ shared_focus = {
 	}
 	relative_position_id = KSK_a_tough_choice
 	prerequisite = { focus = KSK_a_tough_choice }
+	mutually_exclusive = { focus = KSK_the_west_has_fallen }
 }
 
 shared_focus = {
 	id = KSK_copenhagen_headquaters
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_copenhagen_headquaters
 	cost = 2
 	x = -1
 	y = 1
@@ -8828,7 +8831,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_liberate_the_sea
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_focus_generic_support_the_left_right
 	cost = 2
 	x = 1
 	y = 1
@@ -8842,7 +8845,7 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_democracies_united
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_goal_anschluss
 	cost = 2
 	x = 1
 	y = 1
@@ -8858,9 +8861,9 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_promote_cover_corp
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_promote_cover_corp
 	cost = 2
-	x = 0
+	x = 1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_promote_cover_corp"
@@ -8871,13 +8874,13 @@ shared_focus = {
 
 shared_focus = {
 	id = KSK_liberal_heaven
-	icon = GFX_generic_suspend_constitution
+	icon = GFX_KSK_liberal_heaven
 	cost = 2
-	x = 0
+	x = -1
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_liberal_heaven"
 	}
-	relative_position_id = KSK_promote_cover_corp
-	prerequisite = { focus = KSK_promote_cover_corp }
+	relative_position_id = KSK_democracies_united
+	prerequisite = { focus = KSK_democracies_united }
 }
