@@ -8164,13 +8164,13 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = KSK_the_world_is_mine
-	icon = GFX_KSK_the_world_is_mine
+	id = KSK_encourage_bocchi
+	icon = GFX_KSK_encourage_bocchi
 	cost = 7
 	x = 0
 	y = 2
 	completion_reward = {
-		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_world_is_mine"
+		log = "[GetDateText]: [Root.GetName]: Focus KSK_encourage_bocchi"
 		remove_ideas = ksk_unpopular_throne
 		add_popularity = { ideology = democratic popularity = 0.10 }
 	}
@@ -8290,8 +8290,8 @@ shared_focus = {
 			}
 		}
 	}
-	relative_position_id = KSK_the_world_is_mine
-	prerequisite = { focus = KSK_the_world_is_mine }
+	relative_position_id = KSK_encourage_bocchi
+	prerequisite = { focus = KSK_encourage_bocchi }
 }
 
 shared_focus = {
@@ -8312,7 +8312,7 @@ shared_focus = {
 	}
 	relative_position_id = KSK_the_alcohol_trade
 	prerequisite = { focus = KSK_the_alcohol_trade }
-	prerequisite = { focus = KSK_the_world_is_mine }
+	prerequisite = { focus = KSK_encourage_bocchi }
 	prerequisite = { focus = KSK_a_new_unity_band }
 }
 
@@ -8330,7 +8330,7 @@ shared_focus = {
 	}
 	relative_position_id = KSK_the_alcohol_trade
 	prerequisite = { focus = KSK_the_alcohol_trade }
-	prerequisite = { focus = KSK_the_world_is_mine }
+	prerequisite = { focus = KSK_encourage_bocchi }
 	prerequisite = { focus = KSK_a_new_unity_band }
 }
 

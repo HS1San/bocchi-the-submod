@@ -52,7 +52,7 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				consumer_goods_factor = -0.10
+				consumer_goods_factor = -0.05
 			}
 		}
 		KSK_kikuri_taiwan_purchase_1b = {
@@ -63,7 +63,7 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				consumer_goods_factor = 0.20
+				consumer_goods_factor = 0.05
 			}
 		}
 		KSK_kikuri_taiwan_purchase_2a = {
@@ -74,7 +74,7 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				consumer_goods_factor = -0.20
+				consumer_goods_factor = -0.10
 			}
 		}
 		KSK_kikuri_taiwan_purchase_2b = {
@@ -85,7 +85,7 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				consumer_goods_factor = 0.40
+				consumer_goods_factor = 0.10
 			}
 		}
 		KSK_kikuri_expansionism = {

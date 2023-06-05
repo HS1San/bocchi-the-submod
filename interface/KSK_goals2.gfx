@@ -12,13 +12,68 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_KSK_a_clerical_state"
+		texturefile = "gfx/interface/goals/KSK_a_clerical_state.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_a_tough_choice"
+		texturefile = "gfx/interface/goals/KSK_a_tough_choice.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_bihegemony_in_asia"
+		texturefile = "gfx/interface/goals/KSK_bihegemony_in_asia.png"
+	}
+
+	SpriteType = {
 		name = "GFX_KSK_chemistry_within_chaos"
 		texturefile = "gfx/interface/goals/KSK_chemistry_within_chaos.png"
 	}
 
 	SpriteType = {
+		name = "GFX_KSK_copenhagen_headquaters"
+		texturefile = "gfx/interface/goals/KSK_copenhagen_headquaters.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_declare_ostasian_coprosperity_sphere"
+		texturefile = "gfx/interface/goals/KSK_declare_ostasian_coprosperity_sphere.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_disband_kessoku"
+		texturefile = "gfx/interface/goals/KSK_disband_kessoku.png"
+	}
+
+	SpriteType = {
 		name = "GFX_KSK_drunken_democracy"
 		texturefile = "gfx/interface/goals/KSK_drunken_democracy.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_eliminate_bocchi"
+		texturefile = "gfx/interface/goals/KSK_eliminate_bocchi.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_eliminate_kita"
+		texturefile = "gfx/interface/goals/KSK_eliminate_kita.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_eliminate_nijika"
+		texturefile = "gfx/interface/goals/KSK_eliminate_nijika.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_eliminate_ryo"
+		texturefile = "gfx/interface/goals/KSK_eliminate_ryo.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_encourage_bocchi"
+		texturefile = "gfx/interface/goals/KSK_encourage_bocchi.png"
 	}
 
 	SpriteType = {
@@ -42,8 +97,58 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_KSK_invite_castiglioni"
+		texturefile = "gfx/interface/goals/KSK_invite_castiglioni.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_invite_quandts"
+		texturefile = "gfx/interface/goals/KSK_invite_quandts.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_its_over"
+		texturefile = "gfx/interface/goals/KSK_its_over.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_kessoku_psycho"
+		texturefile = "gfx/interface/goals/KSK_kessoku_psycho.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_liberal_heaven"
+		texturefile = "gfx/interface/goals/KSK_liberal_heaven.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_martyrise_bocchi"
+		texturefile = "gfx/interface/goals/KSK_martyrise_bocchi.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_nationalcapitalism"
+		texturefile = "gfx/interface/goals/KSK_nationalcapitalism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_new_shotguitar_generation"
+		texturefile = "gfx/interface/goals/KSK_new_shotguitar_generation.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_ordenstaadt_kessoku"
+		texturefile = "gfx/interface/goals/KSK_ordenstaadt_kessoku.png"
+	}
+
+	SpriteType = {
 		name = "GFX_KSK_prepare_for_big_trouble"
 		texturefile = "gfx/interface/goals/KSK_prepare_for_big_trouble.png"
+	}
+
+	SpriteType = {
+		name = "GFX_KSK_promote_cover_corp"
+		texturefile = "gfx/interface/goals/KSK_promote_cover_corp.png"
 	}
 
 	SpriteType = {
@@ -62,117 +167,7 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_KSK_the_world_is_mine"
-		texturefile = "gfx/interface/goals/KSK_the_world_is_mine.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_its_over"
-		texturefile = "gfx/interface/goals/GFX_KSK_its_over.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_eliminate_ryo"
-		texturefile = "gfx/interface/goals/GFX_KSK_eliminate_ryo.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_eliminate_kita"
-		texturefile = "gfx/interface/goals/GFX_KSK_eliminate_kita.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_eliminate_nijika"
-		texturefile = "gfx/interface/goals/GFX_KSK_eliminate_nijika.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_eliminate_bocchi"
-		texturefile = "gfx/interface/goals/GFX_KSK_eliminate_bocchi.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_its_over"
-		texturefile = "gfx/interface/goals/GFX_KSK_its_over.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_disband_kessoku"
-		texturefile = "gfx/interface/goals/GFX_KSK_disband_kessoku.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_kessoku_psycho"
-		texturefile = "gfx/interface/goals/GFX_KSK_kessoku_psycho.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_a_clerical_state"
-		texturefile = "gfx/interface/goals/GFX_KSK_a_clerical_state.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_martyrise_bocchi"
-		texturefile = "gfx/interface/goals/GFX_KSK_martyrise_bocchi.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_bihegemony_in_asia"
-		texturefile = "gfx/interface/goals/GFX_KSK_bihegemony_in_asia.png"
-	}
-	
-	SpriteType = {
-		name = "GFX_KSK_ordenstaadt_kessoku"
-		texturefile = "gfx/interface/goals/GFX_KSK_ordenstaadt_kessoku.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_new_shotguitar_generation"
-		texturefile = "gfx/interface/goals/GFX_KSK_new_shotguitar_generation.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_a_tough_choice"
-		texturefile = "gfx/interface/goals/GFX_KSK_a_tough_choice.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_invite_castiglioni"
-		texturefile = "gfx/interface/goals/GFX_KSK_invite_castiglioni.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_invite_quandts"
-		texturefile = "gfx/interface/goals/GFX_KSK_invite_quandts.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_declare_ostasian_coprosperity_sphere"
-		texturefile = "gfx/interface/goals/GFX_KSK_declare_ostasian_coprosperity_sphere.png"
-	}
-	
-	SpriteType = {
 		name = "GFX_KSK_the_times_of_trouble"
-		texturefile = "gfx/interface/goals/GFX_KSK_the_times_of_trouble.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_nationalcapitalism"
-		texturefile = "gfx/interface/goals/GFX_KSK_nationalcapitalism.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_copenhagen_headquaters"
-		texturefile = "gfx/interface/goals/GFX_KSK_copenhagen_headquaters.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_liberal_heaven"
-		texturefile = "gfx/interface/goals/GFX_KSK_liberal_heaven.png"
-	}
-
-	SpriteType = {
-		name = "GFX_KSK_promote_cover_corp"
-		texturefile = "gfx/interface/goals/GFX_KSK_promote_cover_corp.png"
+		texturefile = "gfx/interface/goals/KSK_the_times_of_trouble.png"
 	}
 }
