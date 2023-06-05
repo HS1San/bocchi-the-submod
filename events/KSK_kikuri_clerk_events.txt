@@ -251,7 +251,7 @@ country_event = {
 		id = KSK_clerk_two.7
 		title = KSK_clerk_two.7.t
 		desc = KSK_clerk_two.7.desc
-		picture = GFX_report_event_kikuri
+		picture = GFX_report_event_clerk_two
 	
 		is_triggered_only = yes
 	
@@ -267,7 +267,7 @@ country_event = {
 		id = KSK_clerk_two.8
 		title = KSK_clerk_two.8.t
 		desc = KSK_clerk_two.8.desc
-		picture = GFX_report_event_duo_conflict
+		picture = GFX_report_event_clerk_two
 	
 		is_triggered_only = yes
 	
