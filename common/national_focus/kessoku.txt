@@ -8394,11 +8394,12 @@ shared_focus = {
 shared_focus = {
 	id = KSK_its_over
 	icon = GFX_KSK_its_over
-	cost = 2
+	cost = 8
 	x = -40
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_its_over"
+		add_political_power = 120
 	}
 	relative_position_id = KSK_political_turmoil
 	prerequisite = { focus = KSK_political_turmoil }
@@ -8417,6 +8418,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_ryo"
+		add_stability = -0.1
+		retire_character = KSK_ryo_yamada
 	}
 	relative_position_id = KSK_its_over
 	prerequisite = { focus = KSK_its_over }
@@ -8430,6 +8433,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_kita"
+		add_stability = -0.1
+		retire_character = KSK_kita_ikuyo
 	}
 	relative_position_id = KSK_eliminate_ryo
 	prerequisite = { focus = KSK_eliminate_ryo }
@@ -8443,6 +8448,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_nijika"
+		add_stability = -0.1
+		retire_character = KSK_nijika_ijichi
 	}
 	relative_position_id = KSK_its_over
 	prerequisite = { focus = KSK_its_over }
@@ -8456,6 +8463,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_eliminate_bocchi"
+		add_stability = -0.1
+		retire_character = KSK_hitori_gotoh
 	}
 	relative_position_id = KSK_eliminate_nijika
 	prerequisite = { focus = KSK_eliminate_nijika }
@@ -8469,6 +8478,16 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_disband_kessoku"
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48
+			name = "Store Clerk Loyalists"
+		}
+		add_stability = -0.2
+		promote_character = KSK_store_clerk_one
+		promote_character = KSK_store_clerk_two
 	}
 	relative_position_id = KSK_eliminate_kita
 	prerequisite = { focus = KSK_eliminate_kita }
@@ -8483,6 +8502,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_clerical_state"
+		retire_character = KSK_store_clerk_two
+		add_stability = 0.5
 	}
 	relative_position_id = KSK_disband_kessoku
 	prerequisite = { focus = KSK_disband_kessoku }
@@ -8497,6 +8518,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_martyrise_bocchi"
+		add_stability = 0.1
+		add_political_power = 100
 	}
 	relative_position_id = KSK_a_clerical_state
 	prerequisite = { focus = KSK_a_clerical_state }
@@ -8510,6 +8533,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_new_religion"
+		add_war_support = 0.2
 	}
 	relative_position_id = KSK_a_clerical_state
 	prerequisite = { focus = KSK_a_clerical_state }
@@ -8523,6 +8547,13 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_gotou_cult"
+		add_popularity = {
+			ideology = fascism
+			popularity = 100
+		}
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_ideas = KSK_gotou_cult
 	}
 	relative_position_id = KSK_martyrise_bocchi
 	prerequisite = { focus = KSK_martyrise_bocchi }
@@ -8537,6 +8568,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_side_with_germany"
+		diplomatic_relation = {
+			country = GER
+			relation = guarantee
+			active = yes
+		}
 	}
 	relative_position_id = KSK_the_gotou_cult
 	prerequisite = { focus = KSK_the_gotou_cult }
@@ -8551,6 +8587,16 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_finish_the_bocchibahn"
+		add_building_construction = {
+			type = infrastructure
+			level = 10
+			province = {
+				all_provinces = yes
+				limit_to_border = yes
+			}
+			instant_build = yes
+		}
+		
 	}
 	relative_position_id = KSK_side_with_germany
 	prerequisite = { focus = KSK_side_with_germany }
@@ -8564,6 +8610,9 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_ordenstaadt_kessoku"
+		set_cosmetic_tag = KSK_tno_reference
+		GER = { add_to_faction = KSK }
+		add_political_power = 120
 	}
 	relative_position_id = KSK_side_with_germany
 	prerequisite = { focus = KSK_side_with_germany}
@@ -8577,6 +8626,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_new_shotguitar_generation"
+		add_research_slot = 1
+		add_ideas = KSK_clerk_research_speed
 	}
 	relative_position_id = KSK_ordenstaadt_kessoku
 	prerequisite = { focus = KSK_ordenstaadt_kessoku }
@@ -8591,6 +8642,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_seize_the_ryopanthers"
+		add_research_slot = 1
+		add_equipment_to_stockpile = {
+			type = heavy_tank_chassis_1
+			amount = 2000
+		}
 	}
 	relative_position_id = KSK_ordenstaadt_kessoku
 	prerequisite = { focus = KSK_ordenstaadt_kessoku }
@@ -8605,6 +8661,38 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_iron_clerk"
+		add_state_claim = 286
+		add_state_claim = 670
+		add_state_claim = 671
+		add_state_claim = 336
+		add_state_claim = 333
+		add_state_claim = 728
+		add_state_claim = 326
+		add_state_claim = 592
+		create_wargoal = {
+			type = annex_everything
+			target = SIA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = INS
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = YUN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MAL
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = GXC
+		}
+		create_wargoal = {
+			type = take_claimed_state
+			target = FRA
+		}
 	}
 	relative_position_id = KSK_new_shotguitar_generation
 	prerequisite = { focus = KSK_new_shotguitar_generation }
@@ -8619,6 +8707,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_side_with_japan"
+		diplomatic_relation = {
+			country = JAP
+			relation = guarantee
+			active = yes
+		}
 	}
 	relative_position_id = KSK_the_gotou_cult
 	prerequisite = { focus = KSK_the_gotou_cult }
@@ -8633,6 +8726,9 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_bihegemony_in_asia"
+		JAP = { add_to_faction = KSK }
+		add_political_power = 120
+		
 	}
 	relative_position_id = KSK_side_with_japan
 	prerequisite = { focus = KSK_side_with_japan }
@@ -8646,6 +8742,15 @@ shared_focus = {
 	y = 0
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_indochina_expansion"
+		annex_country = {
+			target = PHI
+			transfer_troops = no
+		}
+		annex_country = {
+			target = SIA
+			transfer_troops = no
+		}
+		transfer_state = 524
 	}
 	relative_position_id = KSK_bihegemony_in_asia
 	prerequisite = { focus = KSK_side_with_japan }
@@ -8659,6 +8764,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_modernise_nijikatigers"
+		add_research_slot = 1
+		add_ideas = KSK_clerk_research_speed
 	}
 	relative_position_id = KSK_indochina_expansion
 	prerequisite = { focus = KSK_indochina_expansion }
@@ -8673,6 +8780,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_dead_men_marching"
+		add_ideas = KSK_dead_mod_marching
 	}
 	relative_position_id = KSK_indochina_expansion
 	prerequisite = { focus = KSK_indochina_expansion }
@@ -8687,6 +8795,12 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_nuclear_scare"
+		add_research_slot = 1
+		add_tech_bonus = {
+			bonus = 1
+			uses = 5
+			category = nuclear
+		}
 	}
 	relative_position_id = KSK_modernise_nijikatigers
 	prerequisite = { focus = KSK_modernise_nijikatigers }
@@ -8701,6 +8815,10 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_kessoku_psycho"
+		retire_character = KSK_store_clerk_one
+		set_politics = {
+			ruling_party = democratic
+		}
 	}
 	relative_position_id = KSK_disband_kessoku
 	prerequisite = { focus = KSK_disband_kessoku }
@@ -8715,6 +8833,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_business_as_usual"
+		add_stability = 0.5
 	}
 	relative_position_id = KSK_kessoku_psycho
 	prerequisite = { focus = KSK_kessoku_psycho }
@@ -8728,6 +8847,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_internet_cencorship"
+		add_stability = 0.5
+		add_ideas = KSK_internet_cencorship
 	}
 	relative_position_id = KSK_business_as_usual
 	prerequisite = { focus = KSK_business_as_usual }
@@ -8741,6 +8862,10 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_totalitarian_liberalism"
+		add_popularity = {
+			ideology = democratic
+			popularity = 1
+		 }
 	}
 	relative_position_id = KSK_business_as_usual
 	prerequisite = { focus = KSK_business_as_usual }
@@ -8754,6 +8879,10 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_tough_choice"
+		country_event = {
+			id = clerk_two.4
+		}
+		
 	}
 	relative_position_id = KSK_internet_cencorship
 	prerequisite = { focus = KSK_internet_cencorship }
@@ -8768,6 +8897,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_west_has_fallen"
+		GER = { add_to_faction = KSK }
 	}
 	relative_position_id = KSK_a_tough_choice
 	prerequisite = { focus = KSK_a_tough_choice }
@@ -8782,6 +8912,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_invite_castiglioni"
+		ITA = {
+			country_event = {
+			id = clerk_two.6
+			}
+		}
 	}
 	relative_position_id = KSK_the_west_has_fallen
 	prerequisite = { focus = KSK_the_west_has_fallen }
@@ -8796,6 +8931,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_invite_quandts"
+		add_ideas = KSK_german_ties
 	}
 	relative_position_id = KSK_the_west_has_fallen
 	prerequisite = { focus = KSK_the_west_has_fallen }
@@ -8810,6 +8946,14 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_times_of_trouble"
+		SOV = {
+			reserve_dynamic_country = yes
+			start_civil_war = {
+				ideology = democratic
+				size = 0.5
+				states = all
+			}
+		}
 	}
 	relative_position_id = KSK_invite_castiglioni
 	prerequisite = {
@@ -8826,9 +8970,13 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_nationalcapitalism"
+		annex_country = {
+			target = PHI
+		}
 	}
 	relative_position_id = KSK_the_times_of_trouble
 	prerequisite = { focus = KSK_the_times_of_trouble }
+
 }
 
 shared_focus = {
@@ -8839,6 +8987,38 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_declare_ostasian_coprosperity_sphere"
+		add_state_claim = 286
+		add_state_claim = 670
+		add_state_claim = 671
+		add_state_claim = 336
+		add_state_claim = 333
+		add_state_claim = 728
+		add_state_claim = 326
+		add_state_claim = 592
+		create_wargoal = {
+			type = annex_everything
+			target = SIA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = INS
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = YUN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MAL
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = GXC
+		}
+		create_wargoal = {
+			type = take_claimed_state
+			target = FRA
+		}
 	}
 	relative_position_id = KSK_the_times_of_trouble
 	prerequisite = { focus = KSK_the_times_of_trouble }
@@ -8852,6 +9032,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_the_west_is_rising"
+		ENG = { add_to_faction = KSK }
 	}
 	relative_position_id = KSK_a_tough_choice
 	prerequisite = { focus = KSK_a_tough_choice }
@@ -8866,6 +9047,15 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_copenhagen_headquaters"
+		annex_country = {
+			target = DEN
+		}
+		annex_country = {
+			target = SWE
+		}
+		annex_country = {
+			target = NOR
+		}
 	}
 	relative_position_id = KSK_the_west_is_rising
 	prerequisite = { focus = KSK_the_west_is_rising }
@@ -8880,6 +9070,22 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_liberate_the_sea"
+		annex_country = {
+			target = SIA
+		}
+		annex_country = {
+			target = MAL
+		}
+		annex_country = {
+			target = PHI
+		}
+		transfer_state = 670
+		transfer_state = 671
+		transfer_state = 286
+		HOL = {
+			end_puppet = INS
+		}
+		ENG = { add_to_faction = INS }
 	}
 	relative_position_id = KSK_the_west_is_rising
 	prerequisite = { focus = KSK_the_west_is_rising }

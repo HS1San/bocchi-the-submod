@@ -121,5 +121,54 @@ ideas = {
 				training_time_factor = -0.10
 			}
 		}
+		KSK_clerk_research_speed = {
+			picture = generic_infantry_bonus
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				industrial_capacity_factory = 0.50
+				research_speed_factor = 1
+				local_resources_factor = 0.1
+				training_time_factor = -0.50
+			}
+		}
+		KSK_dead_mod_marching = {
+			picture = generic_infantry_bonus
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				offence = 0.5
+				defence = 0.5
+			}
+		}
+		KSK_internet_cencorship = {
+			picture = generic_manpower_bonus
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				weekly_manpower = 5000
+				war_support_factor = 0.3
+			}
+		}
+		KSK_german_ties = {
+			picture = generic_manpower_bonus
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				weekly_manpower = 7000
+				industrial_capacity_factory = 0.70
+				research_speed_factor = 1
+				local_resources_factor = 0.2
+				training_time_factor = -0.70
+			}
+		}
 	}
 }

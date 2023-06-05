@@ -340,6 +340,7 @@ characters={
 		portraits={
 			civilian={
 				small=GFX_portrait_KSK_store_clerk_one_small
+				large="gfx/leaders/KSK/store_clerk_one.png"
 			}
 		}
 		advisor={
@@ -353,6 +354,11 @@ characters={
 				fascist_demagogue
 			}
 		}
+		country_leader={
+			ideology=gen_nazism
+			desc = KSK_STORE_CLERK_ONE_DESC
+			expire="1989.1.1.1"
+		}
 	}
 	KSK_store_clerk_two={
 		name=KSK_CHARACTER_STORE_TWO
@@ -360,6 +366,7 @@ characters={
 		portraits={
 			civilian={
 				small=GFX_portrait_KSK_store_clerk_two_small
+				large="gfx/leaders/KSK/store_clerk_two.png"
 			}
 		}
 		advisor={
@@ -372,6 +379,11 @@ characters={
 			traits = {
 				democratic_reformer
 			}
+		}
+		country_leader={
+			ideology=liberalism
+			desc = KSK_STORE_CLERK_TWO_DESC
+			expire="1989.1.1.1"
 		}
 	}
 	KSK_shima={
