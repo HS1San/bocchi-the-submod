@@ -1,7 +1,9 @@
 ﻿l_english:
 
  # Characters
-  KSK_kikuri_hiroi_desc: ""
+  KSK_kikuri_hiroi_desc: "The bassist and vocalist of SICK HACK, Kikuri Hiroi is drunk most of the time. Her frequent drunkenness is a source of trouble for everyone and is the main reason why she is always short of money. As fate would have it, Kikuri now finds herself supporting Bocchi's rule in Kessoku, as her prime minister. Though many doubt her ability to lead as a result of her constant drunken state."
+
+  KSK_STORE_CLERK_ONE_DESC: "It is hard to call Yamaha-san's life interesting or unique - working at a music store was the only entertainment in her life. That was the case until she won a deadly struggle over Kessoku and became the sole leader of the country.\nAt first, Yamaha wasn't interested in what was happening in a new rogue state. Later, though, she saw an opportunity - an opportunity to control the land, to be its ruler. After conspiring with her co-worker, they successfully couped the quadrumvirate of Hitori Gotoh, Nijika Ijichi, Ryo Yamada, and Kita Ikuyo and installed their own dictatorship. As it usually happens, their tandem also broke very quickly - resulting in another coup and the death of Yamaha's last enemy...\n\nNow, she sits at the top of the throne, proudly looking upon the country she can truly call hers while trying to ignore the blood that was spilled and the tears that were cried.\n\nAfter all, everything comes at a cost, right?"
 
  # Decisions
   KSK_kikuri_alcohol_trade_category: "Alcohol Trade"
@@ -46,6 +48,29 @@
   KSK_kikuri.7.t: "[FROM.GetName] Rejects Invitation"
   KSK_kikuri.7.desc: "Kikuri was dejected by the response and went to drink for the rest of the day."
   KSK_kikuri.7.a: "Ehhhh??"
+
+  KSK_clerk_one.1.t: "The End of Ryo"
+  KSK_clerk_one.1.desc: ""I'm Sorry, Ryo-san, but there have to be casualities" Yamaha-san folded her knife... Ryo was the most loyal Kessoku member, she actually impressed the Store Clerk Duo... But no one in Kessoku should've been left alive... When the Seagulls Cry... No one will be left alive... Tick... Tock..."
+  KSK_clerk_one.1.a: "It was inevitable"
+  KSK_clerk_one.2.t: "The Death of Kita"
+  KSK_clerk_one.2.desc: "Yamaha-san smiled...\nKita Ikuyu... Always so cheerful, has fallen asleep forever... Kessoku is getting closer and closer the the fall... And they can't do anything to protect themselves... Tick... Tock"
+  KSK_clerk_one.2.a: "She didn't deserve it"
+  KSK_clerk_one.3.t: "The Death of Nijika"
+  KSK_clerk_one.3.desc: "Nijika tried to resist... But Yamaha-san was stronger... Nijika's lifeless body fell on the ground... "Goodbye, Nijika" whispered the store clerk... Bocchi was next... Kessoku won't win its last fight... Tick... Tock..."
+  KSK_clerk_one.3.a: "A psycho kills a psycho"
+  KSK_clerk_one.4.t: "The Death of Bocchi"
+  KSK_clerk_one.4.desc: "KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI KILL BOCCHI"
+  KSK_clerk_one.4.a: "KILL BOCCHI KILL BOCCHI KILL BOCCHI"
+  KSK_clerk_one.5.t: "We Can't Be Stopped"
+  KSK_clerk_one.5.desc: "The Plan must be fulfilled... We must fight for our godess... The Heresy must be eradicated\n\nBy any means... The second store clerk must be stopped\n\nDESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY DESTROY "
+  KSK_clerk_one.5.a: "DESTROY DESTROY DESTROY DESTROY"
+  KSK_clerk_two.6.t: "Stopping the Madwoman"
+  KSK_clerk_two.6.desc: "It had to be stopped\n\nYamaha-san has gone insane, building a cult around Hitori Gotoh whom she murdered with her own hands\n\nKessoku cannot be revived and the peace cannot be brought back, but we have to stop the dark eldrich insanity which the first store clerk is providing...\n\nBefore it's too late"
+  KSK_clerk_two.6.a: "There was no other way"
+  KSK_clerk_two.7.t: "Kessoku Calls for a Personal Union!"
+  KSK_clerk_two.8.t: "Italy Accepts the Personal Union"
+  KSK_clerk_two.8.desc: "After long negotiation sessions the house of Castiglioni presented by Beatrice Castiglioni accepted the integration into the Kessoku state on equal confederate rights\n\nThe integration of the union state begins tomorrow"
+  KSK_clerk_two.8.a: "Idk what to write here :p"
 
  # Ideas
   KSK_kikuri_kessoku: "Kessoku Band Promoted"

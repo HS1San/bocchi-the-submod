@@ -6,4 +6,4 @@ dependencies={
 }
 name="Bocchi the Submod"
 supported_version="1.11.*"
-path=mod/bocchi-the-submod/"
+path="mod/bocchi-the-submod/"
