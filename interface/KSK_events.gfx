@@ -1,0 +1,18 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_report_event_clerk_one"
+		texturefile = "gfx/event_pics/store_clerk_one_event_pic.png"
+	}
+	SpriteType = {
+		name = "GFX_report_event_clerk_two"
+		texturefile = "gfx/event_pics/store_clerk_two_event_pic.png"
+	}
+	SpriteType = {
+		name = "GFX_report_event_clerk_one_blood"
+		texturefile = "gfx/event_pics/store_clerk_one_event_pic_blood.png"
+	}
+	SpriteType = {
+		name = "GFX_report_event_clerk_two_blood"
+		texturefile = "gfx/event_pics/store_clerk_two_event_pic_blood.png"
+	}
+}

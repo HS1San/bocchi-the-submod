@@ -1,4 +1,6 @@
 ﻿add_namespace = KSK_kikuri
+add_namespace = KSK_clerk_one
+add_namespace = KSK_clerk_two
 
 country_event = {
 	id = KSK_kikuri.1
@@ -166,3 +168,114 @@ country_event = {
 		name = KSK_kikuri.7.a
 	}
 }
+
+country_event = {
+	id = KSK_clerk_one.1
+	title = KSK_clerk_one.1.t
+	desc = KSK_clerk_one.1.desc
+	picture = GFX_report_event_ryo_rid
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_one.1.a
+	}
+}
+
+country_event = {
+	id = KSK_clerk_one.2
+	title = KSK_clerk_one.2.t
+	desc = KSK_clerk_one.2.desc
+	picture = GFX_report_event_kita_rid
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_one.2.a
+	}
+}
+
+country_event = {
+	id = KSK_clerk_one.3
+	title = KSK_clerk_one.3.t
+	desc = KSK_clerk_one.3.desc
+	picture = GFX_report_event_nijika_rid
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_one.3.a
+	}
+}
+
+country_event = {
+	id = KSK_clerk_one.4
+	title = KSK_clerk_one.4.t
+	desc = KSK_clerk_one.4.desc
+	picture = GFX_news_event_nervous_bocchi
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_one.4.a
+	}
+}
+
+country_event = {
+	id = KSK_clerk_one.5
+	title = KSK_clerk_one.5.t
+	desc = KSK_clerk_one.5.desc
+	picture = GFX_report_event_clerk_two_blood
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_one.5.a
+	}
+}
+
+country_event = {
+	id = KSK_clerk_two.6
+	title = KSK_clerk_two.6.t
+	desc = KSK_clerk_two.6.desc
+	picture = GFX_report_event_clerk_one_blood
+
+	is_triggered_only = yes
+
+	option = {
+		name = KSK_clerk_two.6.a
+	}
+}
+
+	country_event = {
+		id = KSK_clerk_two.7
+		title = KSK_clerk_two.7.t
+		desc = KSK_clerk_two.7.desc
+		picture = GFX_report_event_kikuri
+	
+		is_triggered_only = yes
+	
+		option = {
+			name = KSK_kikuri.7.a
+			KSK = {
+				country_event = KSK_clerk_two.8
+			}
+		}
+	}
+
+	country_event = {
+		id = KSK_clerk_two.8
+		title = KSK_clerk_two.8.t
+		desc = KSK_clerk_two.8.desc
+		picture = GFX_report_event_duo_conflict
+	
+		is_triggered_only = yes
+	
+		option = {
+			name = KSK_kikuri.8.a
+			annex_country = {
+				target = ITA
+				transfer_troops = yes
+			}
+		}
+	}

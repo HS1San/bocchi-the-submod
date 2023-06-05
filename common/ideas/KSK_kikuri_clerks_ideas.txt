@@ -170,5 +170,19 @@ ideas = {
 				training_time_factor = -0.70
 			}
 		}
+		KSK_allied_forces_bonus = {
+			picture = generic_manpower_bonus
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				weekly_manpower = 4000
+				industrial_capacity_factory = 0.3
+				research_speed_factor = 1
+				local_resources_factor = 0.05
+				training_time_factor = -0.40
+			}
+		}
 	}
 }

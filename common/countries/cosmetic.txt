@@ -34,6 +34,10 @@ SICK_HACK = {
     color = rgb { 87 0 127 }
     color_ui = rgb { 87 0 127 }
 }
+tno_reference = {
+	color = rgb { 62 26 74 }
+    color_ui = rgb { 62 26 74 }
+}
 
 MAL_UK = {
     color = rgb { 201 56 93 }
