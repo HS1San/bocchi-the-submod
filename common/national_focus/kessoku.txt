@@ -2796,7 +2796,10 @@
 			remove_ideas = ksk_unpopular_throne
 			set_country_flag = nijika_throne
 			hidden_effect = {
-				news_event = { id = kessoku_news.6 days = 1 }
+				news_event = {
+					id = kessoku_news.6
+					days = 1 
+				}
 			}
 		}
 		ai_will_do = {
@@ -2861,7 +2864,10 @@
 				}
 			}
 			hidden_effect = {
-				news_event = { id = kessoku_news.2 days = 1 }
+				news_event = {
+					id = kessoku_news.2 
+					days = 1 
+				}
 				country_event = { id = kessoku.15 }
 			}
 		}
@@ -3745,7 +3751,10 @@
 				}	
 				load_oob = "KSK_Kessokan_Civil_War_Fascist"
 				set_cosmetic_tag = RKUD
-				news_event = { id = kessoku_news.3 days = 1 }
+				news_event = {
+					id = kessoku_news.3 
+					days = 1 
+				}
 				set_global_flag = kessokan_civil_war
 				set_country_flag = kcw
 				set_country_flag = nijiryo_flag
@@ -4042,14 +4051,6 @@
 					set_country_flag = nijika_kessoku
 				}
 				every_possible_country = {
-					limit = { has_character = KSK_kita_ikuyo }
-					random_character = {
-						limit = { is_character = KSK_kita_ikuyo }
-						set_nationality = ROOT
-						promote_character = yes
-					}
-				}
-				every_possible_country = {
 					limit = { has_character = KSK_ryo_yamada }
 					random_character = {
 						limit = { is_character = KSK_ryo_yamada }
@@ -4138,7 +4139,10 @@
 				}
 				retire_character = KSK_unholy_duo
 				set_cosmetic_tag = RKS
-				news_event = { id = kessoku_news.4 days = 1 }
+				news_event = {
+					id = kessoku_news.4
+					days = 1 
+				}
 				set_country_flag = kcwn
 				set_country_flag = ryo_path
 				clr_country_flag = nijiryo_flag
@@ -4557,7 +4561,13 @@
 			}
 		}
 		bypass = {
-		
+			KSK = {
+				is_ally_with = JAP
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+			}
 		}
 		
 		cost = 5
@@ -4573,7 +4583,7 @@
 				type = take_core_state
 				target = SIA
 			}
-			add_war_support = 0.15
+			add_war_support = 0.1
 			if = {
 				limit = {
 					JAP = {
@@ -4650,7 +4660,10 @@
 			}
 			all_country = {
 				limit = {
-					is_ally_with = KSK
+					OR = {
+						is_ally_with = KSK
+						tag = KSK
+					}
 				}
 				controls_state = 334
 				controls_state = 333
@@ -4703,7 +4716,10 @@
 			}
 			all_country = {
 				limit = {
-					is_ally_with = KSK
+					OR = {
+						is_ally_with = KSK
+						tag = KSK
+					}
 				}
 				controls_state = 334
 				controls_state = 333
@@ -6129,7 +6145,10 @@
 			}
 			hidden_effect = {
 				retire_character = KSK_kita_ikuyo_communist
-				news_event = { id = kessoku_news.9 days = 1 }
+				news_event = {
+					id = kessoku_news.9
+					days = 1 
+				}
 			}
 		}
 		ai_will_do = {
@@ -6185,7 +6204,10 @@
 				}
 			}
 			hidden_effect = {
-				news_event = { id = kessoku_news.7 days = 1 }
+				news_event = {
+					id = kessoku_news.7
+					days = 1 
+				}
 			}
 		}
 		ai_will_do = {
@@ -8164,6 +8186,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_im_the_only_ghost"
+		add_ideas = ksk_bocchi
 		remove_ideas = ksk_powerless_leader
 		KSK_kikuri_hiroi = {
 			if = {
@@ -8176,7 +8199,7 @@ shared_focus = {
 			name = KSK_kikuri_democratic
 			long_name = KSK_kikuri_democratic_long
 		}
-		set_cosmetic_tag - SICK_HACK
+		set_cosmetic_tag = SICK_HACK
 	}
 	relative_position_id = KSK_symbol_of_alcoholism
 	prerequisite = {

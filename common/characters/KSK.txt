@@ -146,6 +146,10 @@ characters={
 				large=GFX_portrait_KSK_pa_san
 				small=GFX_portrait_KSK_pa_san_small
 			}
+			army = {
+				large=GFX_portrait_KSK_pa_san
+				small=GFX_portrait_KSK_pa_san_small
+			}
 		}
 		advisor={
 			slot = political_advisor
@@ -157,6 +161,15 @@ characters={
 			traits = {
 				v_tuber
 			}
+		}
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=4
+			legacy_id=-1
 		}
 	}
 	KSK_futari_gotoh={
@@ -193,6 +206,10 @@ characters={
 				large=GFX_portrait_KSK_jimihen
 				small=GFX_portrait_KSK_jimihen_small
 			}
+			army = {
+				large=GFX_portrait_KSK_jimihen
+				small=GFX_portrait_KSK_jimihen_small
+			}
 		}
 		country_leader={
 			ideology=oligarchism
@@ -200,14 +217,18 @@ characters={
 			expire="1989.1.1.1"
 		}
 		advisor={
-			slot = political_advisor
+			slot = theorist
 			idea_token = ksk_jimihen_advisor
+			ledger = army
 			can_be_fired = yes
 			allowed = {
 				original_tag = KSK
 			}
+			research_bonus = {
+				nuclear = 0.150
+			}
 			traits = {
-				staunch_monarchist
+				nuclear_scientist
 			}
 		}
 	}
