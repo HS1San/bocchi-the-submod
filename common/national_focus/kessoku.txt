@@ -8501,6 +8501,7 @@ shared_focus = {
 		promote_character = KSK_store_clerk_one
 		promote_character = KSK_store_clerk_two
 		remove_ideas = ksk_powerless_leader
+		remove_ideas = ksk_unpopular_throne
 	}
 	relative_position_id = KSK_eliminate_kita
 	prerequisite = { focus = KSK_eliminate_kita }
