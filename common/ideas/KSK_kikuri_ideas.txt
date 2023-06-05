@@ -7,8 +7,8 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				industrial_capacity_factory = 0.05
-				army_core_defence_factor = 0.10
+				industrial_capacity_factory = 0.25
+				army_core_defence_factor = 0.20
 			}
 		}
 		KSK_kikuri_sick_hack = {
@@ -18,8 +18,8 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				production_speed_buildings_factor = 0.05
-				army_core_attack_factor = 0.10
+				production_speed_buildings_factor = 0.25
+				army_core_attack_factor = 0.20
 			}
 		}
 		KSK_kikuri_fan_club = {
@@ -29,8 +29,8 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				conscription = 0.01
-				war_support_factor = 0.10
+				conscription = 0.02
+				war_support_factor = 0.20
 			}
 		}
 		KSK_kikuri_drunk_workers = {
@@ -40,8 +40,8 @@ ideas = {
 			allowed_civil_war = { always = no }
 
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.10
-				production_factory_max_efficiency_factor = -0.10
+				production_factory_efficiency_gain_factor = 0.25
+				production_factory_max_efficiency_factor = -0.25
 			}
 		}
 		KSK_kikuri_taiwan_purchase_1a = {
@@ -96,7 +96,7 @@ ideas = {
 
 			modifier = {
 				conscription_factor = 0.25
-				justify_war_goal_time = -0.20
+				justify_war_goal_time = -0.25
 			}
 		}
 		KSK_kikuri_develop_economy = {

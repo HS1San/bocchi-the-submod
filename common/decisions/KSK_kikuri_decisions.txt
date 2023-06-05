@@ -10,8 +10,8 @@ KSK_kikuri_alcohol_trade_category = {
 			}
 		}
 
-		cost = 75
-		days_remove = 180
+		cost = 50
+		days_remove = 150
 
 		modifier = {
 			consumer_goods_factor = -0.10
