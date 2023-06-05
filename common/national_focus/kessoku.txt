@@ -12,7 +12,7 @@
 	
 	default = no
 	
-	continuous_focus_position = { x = 1750 y = 1500 }
+	continuous_focus_position = { x = 1650 y = 1500 }
 
 	shared_focus = KSK_drunken_democracy
 	shared_focus = KSK_its_over
@@ -8373,6 +8373,18 @@ shared_focus = {
 		set_rule = { can_puppet = yes }
 		create_faction = KSK_kikuri_faction
 		add_ideas = KSK_kikuri_expansionism
+		add_state_core = 286
+		add_state_core = 288
+		add_state_core = 289
+		add_state_core = 325
+		add_state_core = 336
+		add_state_core = 640
+		add_state_core = 670
+		add_state_core = 671
+		add_state_core = 724
+		add_state_core = 747
+		add_state_core = 868
+		add_state_core = 869
 	}
 	relative_position_id = KSK_the_wakaru_ultimatum
 	prerequisite = { focus = KSK_the_wakaru_ultimatum }
