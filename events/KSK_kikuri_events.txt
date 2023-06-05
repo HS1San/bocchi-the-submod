@@ -4,7 +4,7 @@ country_event = {
 	id = KSK_kikuri.1
 	title = KSK_kikuri.1.t
 	desc = KSK_kikuri.1.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -42,7 +42,7 @@ country_event = {
 	id = KSK_kikuri.2
 	title = KSK_kikuri.2.t
 	desc = KSK_kikuri.2.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -74,7 +74,7 @@ country_event = {
 	id = KSK_kikuri.3
 	title = KSK_kikuri.3.t
 	desc = KSK_kikuri.3.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -97,7 +97,7 @@ country_event = {
 	id = KSK_kikuri.4
 	title = KSK_kikuri.4.t
 	desc = KSK_kikuri.4.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -116,7 +116,7 @@ country_event = {
 	id = KSK_kikuri.5
 	title = KSK_kikuri.5.t
 	desc = KSK_kikuri.5.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -140,7 +140,7 @@ country_event = {
 	id = KSK_kikuri.6
 	title = KSK_kikuri.6.t
 	desc = KSK_kikuri.6.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
@@ -155,7 +155,7 @@ country_event = {
 	id = KSK_kikuri.7
 	title = KSK_kikuri.7.t
 	desc = KSK_kikuri.7.desc
-	picture = GFX_news_event_nervous_bocchi
+	picture = GFX_report_event_kikuri
 
 	is_triggered_only = yes
 
