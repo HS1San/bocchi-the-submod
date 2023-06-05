@@ -81,7 +81,6 @@ KSK_kikuri_east_asia_sphere_category = {
 		visible = {
 			FROM = {
 				exists = yes
-				is_subject = no
 				NOT = { has_war_with = ROOT }
 			}
 		}
