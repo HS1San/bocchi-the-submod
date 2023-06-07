@@ -2710,6 +2710,9 @@
 					ideology = nazism
 				}
 			}
+			hidden_effect = {
+				country_event = { id = kessoku.16 }
+			}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -2754,6 +2757,9 @@
 				hidden_effect = {
 					country_event = { id = kessoku.23 }
 				}
+			}
+			hidden_effect = {
+				country_event = { id = kessoku.17 }
 			}
 		}
 		ai_will_do = {
@@ -6148,6 +6154,17 @@
 				news_event = {
 					id = kessoku_news.9
 					days = 1 
+				}
+				set_politics = {
+					ruling_party = neutrality
+					long_name = "The BoKita Dynasty"
+					name = "BoKita Dynasty"
+				}
+				set_popularities = {
+					democratic = 25
+					neutrality = 60
+					fascism = 10
+					communism = 5
 				}
 			}
 		}
