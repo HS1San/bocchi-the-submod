@@ -3742,6 +3742,13 @@
 						 910 909
 					}
 				}	
+				every_possible_country = {
+					limit = { has_character = KSK_seika_ijichi }
+					random_character = {
+						limit = { is_character = KSK_seika_ijichi }
+						set_nationality = ROOT
+					}
+				}
 				recruit_character = KSK_unholy_duo
 				promote_character = {
 					character = KSK_unholy_duo
@@ -4003,12 +4010,6 @@
 			add_stability = 0.05
 			add_war_support = 0.1
 			set_capital = {state = 909}
-			PHI = {
-				country_event = {
-					id = kessoku.83
-					days = 2
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -4905,6 +4906,14 @@
 		relative_position_id =KSK_nijiryo_balance_power
 		
 		available = {
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+				}
+			}
 		}
 		bypass = {
 		
@@ -4934,7 +4943,14 @@
 		relative_position_id =KSK_nijiryo_balance_power
 		
 		available = {
-		
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range < KSK_ryo_medium_control
+					}
+				}
+			}		
 		}
 		bypass = {
 		
@@ -4968,7 +4984,14 @@
 		relative_position_id =KSK_nijiryo_ryo_reforms
 		
 		available = {
-		
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+				}
+			}	
 		}
 		bypass = {
 		
@@ -5006,7 +5029,14 @@
 		relative_position_id =KSK_nijiryo_nijika_reforms
 		
 		available = {
-		
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range < KSK_ryo_medium_control
+					}
+				}
+			}		
 		}
 		bypass = {
 		
@@ -5044,7 +5074,14 @@
 		relative_position_id =KSK_nijiryo_ryo_education
 		
 		available = {
-
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+				}
+			}
 		}
 		bypass = {
 		
@@ -5077,7 +5114,14 @@
 		relative_position_id =KSK_nijiryo_nijika_education
 		
 		available = {
-
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range < KSK_ryo_medium_control
+					}
+				}
+			}
 		}
 		bypass = {
 		
@@ -5110,7 +5154,14 @@
 		relative_position_id =KSK_nijiryo_ryo_weeds_idea
 		
 		available = {
-
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+				}
+			}
 		}
 		bypass = {
 		
@@ -5143,7 +5194,14 @@
 		relative_position_id =KSK_nijiryo_nijika_religious_idea
 		
 		available = {
-
+			NOT = {
+				available = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range < KSK_ryo_medium_control
+					}
+				}
+			}
 		}
 		bypass = {
 		

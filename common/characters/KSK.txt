@@ -49,6 +49,22 @@ characters={
 			traits = { kitaura_small }
 		}	
 	}
+	PHI_kita_ikuyo_philippines={
+		name=KSK_CHARACTER_KITA
+		gender = female
+		portraits={
+			civilian={
+				large=GFX_portrait_KSK_kita_ikuyo
+				small=GFX_portrait_KSK_kita_ikuyo_small
+			}
+		}
+		country_leader={
+			ideology=socialism
+			desc = KSK_KITA_DESC
+			expire="1989.1.1.1"
+			traits = { kitaura_small }
+		}	
+	}
 	KSK_kita_ikuyo_communist={
 		name=KSK_CHARACTER_KITA
 		gender = female
