@@ -240,7 +240,7 @@
 
 		completion_reward = {
 			random_state = {
-				prioritize = { 910 911 909 }
+				prioritize = { 936 937 935 }
 				limit = {
 					free_building_slots = {
 						building = dockyard
@@ -347,52 +347,58 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-		 909 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = dockyard
-						size > 1
-						include_locked = yes
+			935 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			910 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = dockyard
-						size > 1
-						include_locked = yes
+			936 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			911 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = dockyard
-						size > 1
-						include_locked = yes
+			937 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -422,36 +428,40 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-		  909 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = air_base
-						size > 1
-						include_locked = yes
+			935 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = air_base
+							size > 1
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			910 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
+			936 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 			
@@ -712,52 +722,58 @@
 				remove_idea = ksk_airforce_4
 				add_idea = ksk_airforce_5
 			}
-			 909 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = anti_air_building
-						size > 3
-						include_locked = yes
+			935 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = anti_air_building
+							size > 3
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = anti_air_building
-					level = 3
-					instant_build = yes
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-			910 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = anti_air_building
-						size > 3
-						include_locked = yes
+			936 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = anti_air_building
+							size > 3
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = anti_air_building
-					level = 3
-					instant_build = yes
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
-			911 = {
-				limit = {
-					is_in_home_area = yes
-					free_building_slots = {
-						building = anti_air_building
-						size > 3
-						include_locked = yes
+			937 = {
+				if = {
+					limit = {
+						is_in_home_area = yes
+						free_building_slots = {
+							building = anti_air_building
+							size > 3
+							include_locked = yes
+						}
 					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = anti_air_building
-					level = 3
-					instant_build = yes
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -944,6 +960,11 @@
 		   factor = 1
 		}
 	}
+	
+	############################################################################
+	####################		    ARMY		################################
+	############################################################################
+	
 	focus = { 
         id = KSK_modernization_of_army
         icon = GFX_focus_generic_little_entente
@@ -1463,6 +1484,11 @@
            factor = 1
         }
     }
+	
+	############################################################################
+	####################		POLITICAL/BOCCHI		########################
+	############################################################################
+	
 	focus = {
 		id = KSK_political_turmoil
 		icon = GFX_goal_ksk_political_turmoil
@@ -2366,7 +2392,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			912 = {
+			938 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2377,7 +2403,7 @@
 					instant_build = yes
 				}
 			}
-			911 = {
+			937 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2399,7 +2425,7 @@
 					instant_build = yes
 				}
 			}
-			910 = {
+			936 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2410,7 +2436,7 @@
 					instant_build = yes
 				}
 			}
-			909 = {
+			935 = {
 				add_building_construction = {
 					type = bunker
 					province = {
@@ -3367,6 +3393,11 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################			   RYO		  ##############################
+	############################################################################
+	
 	focus = {
 		id = KSK_rattle_rattle
 		icon = GFX_goal_rattle_rattle
@@ -3423,11 +3454,11 @@
 			add_advisor_role = {
 				character = KSK_ryo_yamada
 				activate = yes
-				can_be_fired = no
 				advisor = {
 					slot = political_advisor
 					cost = 50
 					idea_token = ksk_ryo_yamada_idea
+					can_be_fired = no
 					traits = {
 						weed_eater
 					}
@@ -3737,9 +3768,9 @@
 					ruling_party = fascism
 					ideology = ROOT
 					size = 0.4
-					capital = 909
+					capital = 935
 					states = {
-						 910 909
+						 936 935
 					}
 				}	
 				every_possible_country = {
@@ -3785,7 +3816,7 @@
 					ksk_unpopular_throne
 					ksk_powerless_leader
 				}
-				set_capital = {state = 913}
+				set_capital = {state = 939}
 				add_manpower = 100000
 				set_popularities = {
 					democratic = 0
@@ -3828,14 +3859,14 @@
 					load_oob = "KSK_Kessokan_Civil_War_Neutrality"
 				}
 				SHS = {
-					add_state_core = 909
-					add_state_core = 910
-					add_state_core = 911
-					add_state_core = 912
-					add_state_core = 914
+					add_state_core = 935
+					add_state_core = 936
+					add_state_core = 937
+					add_state_core = 938
+					add_state_core = 940
 					add_state_core = 915
-					transfer_state = 911
-					transfer_state = 912
+					transfer_state = 937
+					transfer_state = 938
 					load_oob = "KSK_Kessokan_Civil_War_Democratic"
 					add_equipment_to_stockpile = {
 						type = infantry_equipment
@@ -4009,7 +4040,7 @@
 		completion_reward = {
 			add_stability = 0.05
 			add_war_support = 0.1
-			set_capital = {state = 909}
+			set_capital = {state = 935}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -4046,14 +4077,14 @@
 			custom_effect_tooltip = KSK_nijika_civil_war_tt
 			add_stability = -0.05
 			hidden_effect = {
-				set_capital = {state = 913}
+				set_capital = {state = 939}
 				start_civil_war = {
 					ruling_party = fascism
 					ideology = ROOT
 					size = 0.2
-					capital = 909
+					capital = 935
 					states = {
-						909 911
+						935 937
 					}
 					set_country_flag = nijika_kessoku
 				}
@@ -4200,6 +4231,11 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################		  JUST RYO		 ###############################
+	############################################################################
+	
 	focus = {
 		id = KSK_ryo_first_power
 		icon = GFX_goal_ksk_prepare_ryo
@@ -4665,12 +4701,10 @@
 				}
 				is_ally_with = KSK
 			}
-			all_country = {
-				limit = {
-					OR = {
-						is_ally_with = KSK
-						tag = KSK
-					}
+			any_country = {
+				OR = {
+					is_ally_with = KSK
+					tag = KSK
 				}
 				controls_state = 334
 				controls_state = 333
@@ -4707,125 +4741,123 @@
 		}
 	}
 	focus = {
-		id = KSK_ryo_allied_agreement
-		icon = GFX_goal_ksk_ryo_eng_deal
-		x = 1
-		y = 1
-		relative_position_id =KSK_ryo_japanese_betrayal
-		
-		available = {
-			JAP = { 
-				OR = {
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				is_ally_with = KSK
-			}
-			all_country = {
-				limit = {
-					OR = {
-						is_ally_with = KSK
-						tag = KSK
-					}
-				}
-				controls_state = 334
-				controls_state = 333
-				controls_state = 672
-				controls_state = 336
-				controls_state = 335
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_ryo_japanese_betrayal }
-		mutually_exclusive = { focus = KSK_ryo_bonkers }
+        id = KSK_ryo_allied_agreement
+        icon = GFX_goal_ksk_ryo_eng_deal
+        x = 1
+        y = 1
+        relative_position_id =KSK_ryo_japanese_betrayal
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+        available = {
+            JAP = { 
+                OR = {
+                    has_war_with = USA
+                    has_war_with = ENG
+                }
+                is_ally_with = KSK
+            }
+            KSK = {
+                OR = {
+                    is_ally_with = KSK
+                    tag = KSK
+                }
+                controls_state = 334
+                controls_state = 333
+                controls_state = 672
+                controls_state = 336
+                controls_state = 335
+            }
+        }
+        bypass = {
 
-		completion_reward = {
-			custom_effect_tooltip = KSK_ryo_allied_agreement_tt
-			leave_faction = yes
-			add_war_support = 0.05
-			random_other_country = {
-				limit = {
-					OR = {
-						tag = USA
-						tag = ENG
-					}
-					has_war_with = JAP
-					is_faction_leader = yes
-				}
-				THIS = {
-					country_event = {
-					id = kessoku.56
-					}
-				}
-			}
-			every_enemy_country = {
-				limit = { 
-					OR = {
-						is_in_faction_with = ENG 
-						is_in_faction_with = USA
-					}
-				}
-				white_peace = KSK
-			}
-			every_enemy_country = {
-				limit = { 
-					is_in_faction_with = CHI
-				}
-				white_peace = KSK
-			}
-			every_controlled_state = {
-				limit = {
-					NOT = {
-						is_owned_by = KSK
-					}
-				}
-				transfer_state_to = KSK
-				add_core_of = KSK
-			}
-			JAP = {
-				every_controlled_state = {
-					limit = {
-						NOT = {
-							is_owned_by = PREV
-						}
-					OR = {
-						state = 333
-						state = 336
-						state = 672
-						state = 336
-						state = 335
-						state = 334
-						state = 673
-						state = 667
-						state = 721
-						state = 668
-						state = 669
-						state = 738
-						}
-					}
-					set_state_owner_to = ROOT
-				}
-				add_opinion_modifier = {
-					target = KSK
-					modifier = ryo_betrayal
-				}
-			}
-			hidden_effect = {
-				add_manpower = 100000
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
+        }
+
+        cost = 8
+        prerequisite = { focus = KSK_ryo_japanese_betrayal }
+        mutually_exclusive = { focus = KSK_ryo_bonkers }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+            custom_effect_tooltip = KSK_ryo_allied_agreement_tt
+            leave_faction = yes
+            add_war_support = 0.05
+            random_other_country = {
+                limit = {
+                    OR = {
+                        tag = USA
+                        tag = ENG
+                    }
+                    has_war_with = JAP
+                    is_faction_leader = yes
+                }
+                THIS = {
+                    country_event = {
+                    id = kessoku.56
+                    }
+                }
+            }
+            every_enemy_country = {
+                limit = { 
+                    OR = {
+                        is_in_faction_with = ENG 
+                        is_in_faction_with = USA
+                    }
+                }
+                white_peace = KSK
+            }
+            every_enemy_country = {
+                limit = { 
+                    is_in_faction_with = CHI
+                }
+                white_peace = KSK
+            }
+            every_controlled_state = {
+                limit = {
+                    NOT = {
+                        is_owned_by = KSK
+                    }
+                }
+                transfer_state_to = KSK
+                add_core_of = KSK
+            }
+            JAP = {
+                every_controlled_state = {
+                    limit = {
+                        NOT = {
+                            is_owned_by = PREV
+                        }
+                    OR = {
+                        state = 333
+                        state = 336
+                        state = 672
+                        state = 336
+                        state = 335
+                        state = 334
+                        state = 673
+                        state = 667
+                        state = 721
+                        state = 668
+                        state = 669
+                        state = 738
+                        }
+                    }
+                    set_state_owner_to = ROOT
+                }
+                add_opinion_modifier = {
+                    target = KSK
+                    modifier = ryo_betrayal
+                }
+            }
+            hidden_effect = {
+                add_manpower = 100000
+            }
+        }
+        ai_will_do = {
+            factor = 1 
+        }
+    }
 	focus = {
 		id = KSK_ryo_weed_empire
 		icon = GFX_goal_ryo_weeds
@@ -4864,6 +4896,11 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################		     NIJIRYO	     ###########################
+	############################################################################
+	
 	focus = {
 		id = KSK_nijiryo_balance_power
 		icon = GFX_goal_ksk_nijiryo_balance
@@ -4893,6 +4930,10 @@
 				set_value = 0
 			}
 			set_cosmetic_tag = UHKSK
+			create_wargoal = {
+				type = take_core_state
+				target = SIA
+			}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -4907,12 +4948,10 @@
 		
 		available = {
 			NOT = {
-				available = {
 					is_power_balance_in_range = {
 						id = KSK_balance
 						range > KSK_nijika_medium_control
 					}
-				}
 			}
 		}
 		bypass = {
@@ -4944,13 +4983,11 @@
 		
 		available = {
 			NOT = {
-				available = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range < KSK_ryo_medium_control
-					}
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
 				}
-			}		
+			}
 		}
 		bypass = {
 		
@@ -4985,13 +5022,11 @@
 		
 		available = {
 			NOT = {
-				available = {
 					is_power_balance_in_range = {
 						id = KSK_balance
 						range > KSK_nijika_medium_control
 					}
-				}
-			}	
+			}
 		}
 		bypass = {
 		
@@ -5030,13 +5065,11 @@
 		
 		available = {
 			NOT = {
-				available = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range < KSK_ryo_medium_control
-					}
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
 				}
-			}		
+			}	
 		}
 		bypass = {
 		
@@ -5075,12 +5108,10 @@
 		
 		available = {
 			NOT = {
-				available = {
 					is_power_balance_in_range = {
 						id = KSK_balance
 						range > KSK_nijika_medium_control
 					}
-				}
 			}
 		}
 		bypass = {
@@ -5115,11 +5146,9 @@
 		
 		available = {
 			NOT = {
-				available = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range < KSK_ryo_medium_control
-					}
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
 				}
 			}
 		}
@@ -5155,12 +5184,10 @@
 		
 		available = {
 			NOT = {
-				available = {
 					is_power_balance_in_range = {
 						id = KSK_balance
 						range > KSK_nijika_medium_control
 					}
-				}
 			}
 		}
 		bypass = {
@@ -5195,11 +5222,9 @@
 		
 		available = {
 			NOT = {
-				available = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range < KSK_ryo_medium_control
-					}
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
 				}
 			}
 		}
@@ -5364,10 +5389,6 @@
 			add_state_core = 657
 			add_state_core = 822
 			add_state_core = 875
-			create_wargoal = {
-				type = take_core_state
-				target = SIA
-			}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -5411,25 +5432,19 @@
 			add_state_core = 463
 			add_state_core = 740
 			add_state_core = 739
-			add_state_core = 437
-			add_state_core = 433
-			add_state_core = 439
-			add_state_core = 440
-			add_state_core = 427
-			add_state_core = 424
 			add_state_core = 320
-			add_state_core = 423
-			add_state_core = 422
-			add_state_core = 425
 			add_state_core = 321
-			add_state_core = 429
-			add_state_core = 428
-			add_state_core = 443
-			add_state_core = 444
-			add_state_core = 445
-			add_state_core = 442
 			add_state_core = 336
 			add_state_core = 659
+			add_state_core = 470
+			add_state_core = 472
+			add_state_core = 380
+			add_state_core = 377
+			add_state_core = 387
+			create_wargoal = {
+				type = take_core_state
+				target = USA
+			}
 		}
 		ai_will_do = {
 			factor = 1 
@@ -5632,6 +5647,11 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################		    KITA		    ############################
+	############################################################################
+	
 	focus = {
 		id = KSK_kita_start
 		icon = GFX_goal_kita_start
@@ -7016,21 +7036,21 @@
 				category = cat_production
 			}
 			hidden_effect = {
-				activate_targeted_decision = { target = 909 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 909 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 910 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 910 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 911 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 911 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 935 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 935 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 936 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 936 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 937 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 937 decision = KSK_arms_factory_large }
 				activate_targeted_decision = { target = 741 decision = KSK_arms_factory }
 				activate_targeted_decision = { target = 741 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 912 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 913 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 938 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 939 decision = KSK_arms_factory }
 				if = {
 					limit = {
-						914 = { is_owned_and_controlled_by = KSK }
+						940 = { is_owned_and_controlled_by = KSK }
 					}
-					activate_targeted_decision = { target = KSK_arms_factory }
+					activate_targeted_decision = { target = 940 decision = KSK_arms_factory }
 				}
 			}
 			custom_effect_tooltip = KSK_arms_factory_tt
@@ -7071,21 +7091,21 @@
 				category = construction_tech
 			}
 			hidden_effect = {
-				activate_targeted_decision = { target = 909 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 909 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 910 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 910 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 911 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 911 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 935 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 935 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 936 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 936 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 937 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 937 decision = KSK_civilian_factory_large }
 				activate_targeted_decision = { target = 741 decision = KSK_civilian_factory }
 				activate_targeted_decision = { target = 741 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 912 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 913 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 938 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 939 decision = KSK_civilian_factory }
 				if = {
 					limit = {
-						914 = { is_owned_and_controlled_by = KSK }
+						940 = { is_owned_and_controlled_by = KSK }
 					}
-					activate_targeted_decision = { target = 914 decision = KSK_civilian_factory }
+					activate_targeted_decision = { target = 940 decision = KSK_civilian_factory }
 				}
 			}
 			custom_effect_tooltip = KSK_civilian_factory_tt
@@ -7126,7 +7146,7 @@
 					province = 7303
 					value = 50
 				}
-				910 = {
+				936 = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
@@ -7139,7 +7159,7 @@
 						instant_build = yes
 					}
 				}
-				909 = {
+				935 = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
@@ -7154,7 +7174,7 @@
 					custom_effect_tooltip = KSK_capital_exploitation_tt
 					hidden_effect = {
 						add_dynamic_modifier = { modifier = KSK_capital_exploitation }
-						set_country_flag = KSK_capital_exploitation
+						set_state_flag = KSK_capital_exploitation
 					}
 				}
 			}
@@ -7341,7 +7361,7 @@
 						has_completed_focus = KSK_industry_2b
 						has_idea = KSK_capital_focus
 					}
-					909 = {
+					935 = {
 						add_dynamic_modifier = { modifier = KSK_capital_exploitation }
 					}
 				}
@@ -7349,7 +7369,7 @@
 					limit = {
 						has_completed_focus = KSK_industry_2a
 						}
-						909 = {
+						935 = {
 							add_dynamic_modifier = { modifier = KSK_capital_exploitation }
 						}
 					}
@@ -7393,12 +7413,12 @@
 		    add_resource = {
 				type = steel
 				amount = 16
-				state = 911
+				state = 937
 			}
 			add_resource = {
 				type = aluminium
 				amount = 7
-				state = 912
+				state = 938
 			}
 		}
 		ai_will_do = {
@@ -7649,7 +7669,7 @@
 				type = convoy
 				amount = 50
 			}
-			910 = {
+			936 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7688,7 +7708,7 @@
 		    add_resource = {
 				type = steel
 				amount = 15
-				state = 911
+				state = 937
 			}
 		}
 		ai_will_do = {
@@ -7718,7 +7738,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-		    911 = {
+		    937 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
@@ -8679,16 +8699,13 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_finish_the_bocchibahn"
-		add_building_construction = {
-			type = infrastructure
-			level = 10
-			province = {
-				all_provinces = yes
-				limit_to_border = yes
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 10
+				instant_build = yes
 			}
-			instant_build = yes
 		}
-		
 	}
 	relative_position_id = KSK_side_with_germany
 	prerequisite = { focus = KSK_side_with_germany }
@@ -8974,10 +8991,12 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_a_tough_choice"
-	    add_building_construction = {
-			type = industrial_complex
-			level = 7
-			instant_build = yes
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 7
+				instant_build = yes
+			}
 		}
 	}
 	relative_position_id = KSK_internet_cencorship
@@ -9234,10 +9253,12 @@ shared_focus = {
 			target = SOV
 			type = puppet_wargoal_focus
 		}
-		add_building_construction = {
-			type = arms_factory
-			level = 7
-			instant_build = yes
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 7
+				instant_build = yes
+			}
 		}
 	}
 	relative_position_id = KSK_democracies_united
