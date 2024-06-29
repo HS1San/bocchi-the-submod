@@ -12,7 +12,7 @@
 	
 	default = no
 	
-	continuous_focus_position = { x = 1650 y = 1500 }
+	continuous_focus_position = { x = 250 y = 1800 }
 
 	shared_focus = KSK_drunken_democracy
 	shared_focus = KSK_its_over
@@ -20,7 +20,7 @@
 	focus = {
 		id = KSK_expand_naval_and_air_production
 		icon = GFX_goal_generic_air_production
-		x = 57
+		x = 75
 		y = 0
 		
 		available = {
@@ -240,7 +240,7 @@
 
 		completion_reward = {
 			random_state = {
-				prioritize = { 936 937 935 }
+				prioritize = { 971 972 970 }
 				limit = {
 					free_building_slots = {
 						building = dockyard
@@ -347,7 +347,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			935 = {
+			970 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -365,7 +365,7 @@
 					}
 				}
 			}
-			936 = {
+			971 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -383,7 +383,7 @@
 					}
 				}
 			}
-			937 = {
+			972 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -428,7 +428,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			935 = {
+			970 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -446,7 +446,7 @@
 					}
 				}
 			}
-			936 = {
+			971 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -722,7 +722,7 @@
 				remove_idea = ksk_airforce_4
 				add_idea = ksk_airforce_5
 			}
-			935 = {
+			970 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -740,7 +740,7 @@
 					}
 				}
 			}
-			936 = {
+			971 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -758,7 +758,7 @@
 					}
 				}
 			}
-			937 = {
+			972 = {
 				if = {
 					limit = {
 						is_in_home_area = yes
@@ -897,7 +897,7 @@
 				uses = 3
 				category = naval_bomber
 				category = naval_air
-				category = carrier
+				category = cv_tech
 			}
 		}
 		ai_will_do = {
@@ -1052,7 +1052,6 @@
         completion_reward = {
             army_experience = 15
 			add_doctrine_cost_reduction = {
-				name = KSK_study_western_tactics
 				cost_reduction = 1
 				uses = 2
 				category = land_doctrine
@@ -1486,7 +1485,7 @@
     }
 	
 	############################################################################
-	####################		POLITICAL/BOCCHI		########################
+	####################		POLITICAL		################################
 	############################################################################
 	
 	focus = {
@@ -1501,7 +1500,7 @@
 		bypass = {
 		}
 		
-		cost = 1
+		cost = 0
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1512,6 +1511,7 @@
 				country_event = {
 				id = kessoku.71
 				}
+				mark_focus_tree_layout_dirty = yes
 			}
 		}
 		ai_will_do = {
@@ -1519,11 +1519,71 @@
 		}
 	}
 	focus = {
+		id = KSK_peaceful_change
+		icon = GFX_goal_ksk_political_turmoil
+		relative_position_id =KSK_political_turmoil
+		x = 1
+		y = 1
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_political_turmoil }
+		mutually_exclusive = { focus = KSK_violent_change }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_violent_change
+		icon = GFX_goal_ksk_political_turmoil
+		relative_position_id =KSK_political_turmoil
+		x = -1
+		y = 1
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_political_turmoil }
+		mutually_exclusive = { focus = KSK_peaceful_change }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = -0.1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	############################################################################
+	######################			BOCCHI			############################
+	############################################################################
+	
+	focus = {
 		id = KSK_lonely_ruling_bocchi
 		icon = GFX_goal_lonely_bocchi
-		x = 8
+		x = 19
 		y = 1
-		relative_position_id =KSK_political_turmoil
+		relative_position_id =KSK_peaceful_change
 		
 		available = {
 
@@ -1532,9 +1592,8 @@
 		}
 		
 		cost = 8
-		prerequisite = { focus = KSK_political_turmoil }
+		prerequisite = { focus = KSK_peaceful_change }
 		mutually_exclusive = { focus = KSK_heaven_for_death }
-		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_kita_start }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
 		mutually_exclusive = { focus = KSK_its_over }
@@ -2043,13 +2102,13 @@
 		
 		available = {
 			KSK_ryo_yamada = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 			KSK_nijika_ijichi = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 			KSK_kita_ikuyo = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 		}
 		bypass = {
@@ -2074,19 +2133,19 @@
 	focus = {
 		id = KSK_kessoku_band_form
 		icon = GFX_goal_kessoku_band
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = KSK_kessoku_band
 		
 		available = {
 			KSK_ryo_yamada = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 			KSK_nijika_ijichi = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 			KSK_kita_ikuyo = {
-				is_advisor = yes
+				is_political_advisor = yes
 			}
 		}
 		bypass = {
@@ -2392,7 +2451,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			938 = {
+			973 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2403,7 +2462,7 @@
 					instant_build = yes
 				}
 			}
-			937 = {
+			972 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2425,7 +2484,7 @@
 					instant_build = yes
 				}
 			}
-			936 = {
+			971 = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = {
@@ -2436,7 +2495,7 @@
 					instant_build = yes
 				}
 			}
-			935 = {
+			970 = {
 				add_building_construction = {
 					type = bunker
 					province = {
@@ -2460,12 +2519,17 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################		NIJIKA		###################################
+	############################################################################
+	
 	focus = {
 		id = KSK_heaven_for_death
 		icon = GFX_goal_heaven_for_death
-		x = 3
+		x = 13
 		y = 1
-		relative_position_id =KSK_political_turmoil
+		relative_position_id =KSK_peaceful_change
 		
 		available = {
 
@@ -2474,9 +2538,8 @@
 		}
 		
 		cost = 8
-		prerequisite = { focus = KSK_political_turmoil }
+		prerequisite = { focus = KSK_peaceful_change }
 		mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
-		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_kita_start }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
 		mutually_exclusive = { focus = KSK_its_over }
@@ -3395,2269 +3458,15 @@
 	}
 	
 	############################################################################
-	####################			   RYO		  ##############################
-	############################################################################
-	
-	focus = {
-		id = KSK_rattle_rattle
-		icon = GFX_goal_rattle_rattle
-		x = -8
-		y = 1
-		relative_position_id =KSK_political_turmoil
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_political_turmoil }
-		mutually_exclusive = { focus = KSK_heaven_for_death }
-		mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
-		mutually_exclusive = { focus = KSK_kita_start }
-		mutually_exclusive = { focus = KSK_drunken_democracy }
-		mutually_exclusive = { focus = KSK_its_over }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-		 add_political_power = 120
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_new_economic_minister
-		icon = GFX_goal_ryo_interested_blue
-		x = 0
-		y = 1
-		relative_position_id =KSK_rattle_rattle
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_rattle_rattle }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_advisor_role = {
-				character = KSK_ryo_yamada
-				activate = yes
-				advisor = {
-					slot = political_advisor
-					cost = 50
-					idea_token = ksk_ryo_yamada_idea
-					can_be_fired = no
-					traits = {
-						weed_eater
-					}
-				}
-			}
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.05
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_buy_instruments
-		icon = GFX_goal_ryo_instruments
-		x = 0
-		y = 2
-		relative_position_id =KSK_new_economic_minister
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 4
-		prerequisite = { focus = KSK_new_economic_minister }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = ksk_instruments
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_buy_guns
-		icon = GFX_goal_ryo_guns
-		x = -1
-		y = 1
-		relative_position_id =KSK_new_economic_minister
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 4
-		prerequisite = { focus = KSK_new_economic_minister }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = ksk_guns
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 500
-				producer = JAP
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_weeds
-		icon = GFX_goal_ryo_weeds
-		x = 1
-		y = 1
-		relative_position_id =KSK_new_economic_minister
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 4
-		prerequisite = { focus = KSK_new_economic_minister }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = ksk_weeds
-			KSK_ryo_yamada = { 
-				add_country_leader_trait = stoner
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_fire_ryo
-		icon = GFX_goal_ryo_fired
-		x = 0
-		y = 1
-		relative_position_id =KSK_buy_instruments
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 7
-		prerequisite = { focus = KSK_ryo_weeds }
-		prerequisite = { focus = KSK_buy_guns }
-		prerequisite = { focus = KSK_buy_instruments }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			remove_advisor_role = {
-				character = "KSK_ryo_yamada"
-				slot = political_advisor
-			}
-			add_stability = -0.05
-			remove_ideas = {
-				ksk_guns
-				ksk_instruments
-				ksk_weeds
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_gasoline_on_the_fire
-		icon = GFX_goal_gasoline_fire
-		x = 0
-		y = 1
-		relative_position_id =KSK_fire_ryo
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_fire_ryo }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.05
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-			add_stability = -0.05
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_state_robbery
-		icon = GFX_goal_ryo_interested_blue
-		x = 2
-		y = 1
-		relative_position_id =KSK_gasoline_on_the_fire
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_gasoline_on_the_fire }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.02
-			}
-			add_stability = -0.05
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_establish_mango_kamen
-		icon = GFX_goal_mango_kamen_blue
-		x = -2
-		y = 1
-		relative_position_id =KSK_gasoline_on_the_fire
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_gasoline_on_the_fire }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.05
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_unholy_duo_focus
-		icon = GFX_goal_ryo_beg
-		x = 0
-		y = 1
-		relative_position_id =KSK_gasoline_on_the_fire
-		
-		available = {
-
-		}
-		bypass = {
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_gasoline_on_the_fire }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = 0.1
-			}
-			hidden_effect = {
-				country_event = { id = kessoku.18 }
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_the_revolution
-		icon = GFX_goal_bocchi_fire
-		x = 0
-		y = 1
-		relative_position_id =KSK_unholy_duo_focus
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_unholy_duo_focus }
-		prerequisite = { focus = KSK_state_robbery }
-		prerequisite = { focus = KSK_establish_mango_kamen }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = KSK_civil_war_tt
-			add_stability = -0.15
-			hidden_effect = {
-				start_civil_war = {
-					ruling_party = fascism
-					ideology = ROOT
-					size = 0.4
-					capital = 935
-					states = {
-						 936 935
-					}
-				}	
-				every_possible_country = {
-					limit = { has_character = KSK_seika_ijichi }
-					random_character = {
-						limit = { is_character = KSK_seika_ijichi }
-						set_nationality = ROOT
-					}
-				}
-				recruit_character = KSK_unholy_duo
-				promote_character = {
-					character = KSK_unholy_duo
-					ideology = falangism
-				}
-				add_field_marshal_role = {
-					character = KSK_ryo_yamada
-					skill = 4
-					attack_skill = 4
-					defense_skill = 3
-					planning_skill = 1
-					logistics_skill = 4
-				}	
-				load_oob = "KSK_Kessokan_Civil_War_Fascist"
-				set_cosmetic_tag = RKUD
-				news_event = {
-					id = kessoku_news.3 
-					days = 1 
-				}
-				set_global_flag = kessokan_civil_war
-				set_country_flag = kcw
-				set_country_flag = nijiryo_flag
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 6500
-					producer = JAP
-				}	
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = GER
-				}
-				remove_ideas = {
-					ksk_unpopular_throne
-					ksk_powerless_leader
-				}
-				set_capital = {state = 939}
-				add_manpower = 100000
-				set_popularities = {
-					democratic = 0
-					neutrality = 35
-					fascism = 60
-					communism = 5
-				}
-				set_party_name = {
-					ideology = fascism
-					long_name = "The Wakaran Junta"
-					name = "Wakaran Junta"
-				}
-				every_possible_country = {
-					limit = { 
-						original_tag = KSK
-						has_government = fascism
-						has_country_flag = kcw
-					}
-						add_offsite_building = { type = arms_factory level = 1 }
-						add_offsite_building = { type = arms_factory level = 1 }
-						add_offsite_building = { type = industrial_complex level = 1 }
-						add_offsite_building = { type = industrial_complex level = 1 }
-						add_offsite_building = { type = industrial_complex level = 1 }
-				}
-				random_other_country = {
-					limit = {
-						original_tag = KSK
-						has_government = neutrality
-					}
-					retire_character = KSK_hitori_gotoh
-					KSK_futari_gotoh = {
-						set_nationality = PREV
-						promote_character = yes
-					}
-					add_equipment_to_stockpile = {
-						type = infantry_equipment
-						amount = 5000
-						producer = JAP
-					}
-					load_oob = "KSK_Kessokan_Civil_War_Neutrality"
-				}
-				SHS = {
-					add_state_core = 935
-					add_state_core = 936
-					add_state_core = 937
-					add_state_core = 938
-					add_state_core = 940
-					add_state_core = 915
-					transfer_state = 937
-					transfer_state = 938
-					load_oob = "KSK_Kessokan_Civil_War_Democratic"
-					add_equipment_to_stockpile = {
-						type = infantry_equipment
-						amount = 3000
-						producer = JAP
-					}	
-					add_equipment_to_stockpile = {
-						type = infantry_equipment
-						amount = 500
-						producer = GER
-					}
-					set_party_name = {
-						ideology = democratic
-						long_name = "Seishunists"
-						name = "Seishunists"
-					}	
-				}
-				every_country_with_original_tag = { 
-					original_tag_to_check = KSK
-					SHS = {
-						declare_war_on = {
-							target = PREV
-							type = civil_war
-						}
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_kita_ikuyo }
-					random_character = {
-						limit = { is_character = KSK_kita_ikuyo }
-						set_nationality = SHS
-						promote_character = yes
-					}
-				}			
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_steal_equipment_ryo
-		icon = GFX_goal_ryo_guns
-		x = 0
-		y = 1
-		relative_position_id =KSK_the_revolution
-		
-		available = { 
-			has_civil_war = yes
-			NOT = {
-				OR = {
-					has_completed_focus = KSK_betray_nijika
-					has_completed_focus = KSK_unholy_duo_rules
-				}
-			}
-		}
-			
-		bypass = {
-		
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_the_revolution }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			unlock_decision_category_tooltip = KSK_ryo_stealing_guns_category
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_volunteer_force
-		icon = GFX_goal_ryo_beg
-		x = -2
-		y = 1
-		relative_position_id =KSK_the_revolution
-		
-		available = {
-			has_civil_war = yes
-			NOT = {
-				OR = {
-					has_completed_focus = KSK_betray_nijika
-					has_completed_focus = KSK_unholy_duo_rules
-				}
-			}
-		}
-		bypass = {
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_the_revolution }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_manpower = 125000
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_spiritual_weeds
-		icon = GFX_goal_ryo_angel
-		x = 2
-		y = 1
-		relative_position_id =KSK_the_revolution
-		
-		available = {
-			has_civil_war = yes
-			NOT = {
-				OR = {
-					has_completed_focus = KSK_betray_nijika
-					has_completed_focus = KSK_unholy_duo_rules
-				}
-			}
-		}
-		bypass = {
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_the_revolution }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = ksk_weed_spiritual
-				days = 180
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_unholy_duo_rules
-		icon = GFX_goal_nijika_ryo_alliance
-		x = -3
-		y = 2
-		relative_position_id =KSK_the_revolution
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcw
-				}
-			}
-		}
-		bypass = {
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_the_revolution }
-		mutually_exclusive = { focus = KSK_betray_nijika }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.1
-			set_capital = {state = 935}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_betray_nijika
-		icon = GFX_goal_ksk_ryo_demand
-		x = 3
-		y = 2
-		relative_position_id =KSK_the_revolution
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcw
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_the_revolution }
-		mutually_exclusive = { focus = KSK_unholy_duo_rules }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = KSK_nijika_civil_war_tt
-			add_stability = -0.05
-			hidden_effect = {
-				set_capital = {state = 939}
-				start_civil_war = {
-					ruling_party = fascism
-					ideology = ROOT
-					size = 0.2
-					capital = 935
-					states = {
-						935 937
-					}
-					set_country_flag = nijika_kessoku
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_ryo_yamada }
-					random_character = {
-						limit = { is_character = KSK_ryo_yamada }
-						set_nationality = ROOT
-						promote_character = yes
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_kita_ikuyo_communist }
-					random_character = {
-						limit = { is_character = KSK_kita_ikuyo_communist }
-						set_nationality = ROOT
-						promote_character = yes
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_pa_san }
-					random_character = {
-						limit = { is_character = KSK_pa_san }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_jimihen }
-					random_character = {
-						limit = { is_character = KSK_jimihen }
-						set_nationality = ROOT
-						promote_character = yes
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_kikuri_hiroi }
-					random_character = {
-						limit = { is_character = KSK_kikuri_hiroi }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_eliza }
-					random_character = {
-						limit = { is_character = KSK_eliza }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_store_clerk_one }
-					random_character = {
-						limit = { is_character = KSK_store_clerk_one }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_store_clerk_two }
-					random_character = {
-						limit = { is_character = KSK_store_clerk_two }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_shima }
-					random_character = {
-						limit = { is_character = KSK_shima }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_classmate_one }
-					random_character = {
-						limit = { is_character = KSK_classmate_one }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_classmate_two }
-					random_character = {
-						limit = { is_character = KSK_classmate_two }
-						set_nationality = ROOT
-					}
-				}
-				every_possible_country = {
-					limit = { has_character = KSK_seika_ijichi }
-					random_character = {
-						limit = { is_character = KSK_seika_ijichi }
-						set_nationality = ROOT
-					}
-				}
-				retire_character = KSK_unholy_duo
-				set_cosmetic_tag = RKS
-				news_event = {
-					id = kessoku_news.4
-					days = 1 
-				}
-				set_country_flag = kcwn
-				set_country_flag = ryo_path
-				clr_country_flag = nijiryo_flag
-				load_oob = "KSK_Kessokan_Civil_War_Ryo"
-				add_manpower = 30000
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2000
-					producer = JAP
-				}	
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = GER
-				}
-				set_popularities = {
-					democratic = 0
-					neutrality = 20
-					fascism = 75
-					communism = 5
-				}
-				set_party_name = {
-					ideology = fascism
-					long_name = "The Weeders"
-					name = "Weeders"
-				}
-				random_other_country = {
-					limit = {
-						original_tag = KSK
-						has_government = fascism
-						has_country_flag = nijika_kessoku
-					}
-					KSK_nijika_ijichi = {
-						set_nationality = PREV
-						promote_character = yes
-					}
-					set_cosmetic_tag = HSKE
-					load_oob = "KSK_Kessokan_Civil_War_Nijika"
-					set_party_name = {
-						ideology = fascism
-						long_name = "The Church of Nijika"
-						name = "Church of Nijika"
-					}
-				}				
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	
-	############################################################################
-	####################		  JUST RYO		 ###############################
-	############################################################################
-	
-	focus = {
-		id = KSK_ryo_first_power
-		icon = GFX_goal_ksk_prepare_ryo
-		x = 0
-		y = 1
-		relative_position_id =KSK_betray_nijika
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_betray_nijika }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = ksk_ryo_exploit_1
-			add_stability = 0.05
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_promote_weeds
-		icon = GFX_goal_ryo_weeds
-		x = -2
-		y = 1
-		relative_position_id =KSK_ryo_first_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_betray_nijika }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			KSK_ryo_yamada = {
-				add_country_leader_trait = weed_eaters
-			}
-			add_stability = 0.05
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_obligatory_bass
-		icon = GFX_goal_ksk_ryo_education
-		x = 2
-		y = 1
-		relative_position_id =KSK_ryo_first_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_betray_nijika }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_second_power
-		icon = GFX_goal_ksk_prepare_ryo
-		x = 0
-		y = 2
-		relative_position_id =KSK_ryo_first_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_ryo_first_power }
-		prerequisite = { focus = KSK_ryo_promote_weeds }
-		prerequisite = { focus = KSK_ryo_obligatory_bass }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ksk_ryo_exploit_1
-				add_idea = ksk_ryo_exploit_2
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_nuclear_stuff
-		icon = GFX_goal_ksk_ryo_nuke
-		x = 2
-		y = 1
-		relative_position_id =KSK_ryo_second_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_ryo_first_power }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = nuclear
-			}
-			unlock_decision_tooltip = KSK_ryo_nuclear
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_building_stuff
-		icon = GFX_goal_ksk_ryo_infrastructure
-		x = -2
-		y = 1
-		relative_position_id =KSK_ryo_second_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_ryo_first_power }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.33
-				uses = 2
-				category = nuclear
-			}
-			unlock_decision_tooltip = KSK_ryo_industrial_1
-			unlock_decision_tooltip = KSK_ryo_industrial_2
-			unlock_decision_tooltip = KSK_ryo_infrastructure_1
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_third_power
-		icon = GFX_goal_ksk_prepare_ryo
-		x = 0
-		y = 2
-		relative_position_id =KSK_ryo_second_power
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_ryo_second_power }
-		prerequisite = { focus = KSK_ryo_building_stuff }
-		prerequisite = { focus = KSK_ryo_nuclear_stuff }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ksk_ryo_exploit_2
-				add_idea = ksk_ryo_exploit_3
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_japanese_agreement
-		icon = GFX_goal_ksk_ryo_japan_agreement
-		x = 4
-		y = 1
-		relative_position_id =KSK_betray_nijika
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_civil_war = yes
-					has_country_flag = kcwn
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_betray_nijika }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			JAP = {
-				add_opinion_modifier = {
-					target = KSK
-					modifier = weeded_japanese
-				}
-			}
-			KSK = {
-				add_opinion_modifier = {
-					target = JAP
-					modifier = weeded_japanese
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_pacific_deal
-		icon = GFX_goal_ksk_ryo_pacific_deal
-		x = 0
-		y = 1
-		relative_position_id =KSK_ryo_japanese_agreement
-		
-		available = {
-			KSK = { 
-				NOT = {
-					has_war_with = JAP
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_ryo_japanese_agreement }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_state_core = 336
-			add_state_core = 672
-			add_state_core = 333
-			add_state_core = 289
-			add_state_core = 724
-			JAP = {
-				give_guarantee = KSK
-				add_state_claim = 324
-				add_state_claim = 335
-				add_state_claim = 673
-				add_state_claim = 662
-				add_state_claim = 668
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_pacific_war
-		icon = GFX_goal_ksk_ryo_straight
-		x = 0
-		y = 1
-		relative_position_id =KSK_ryo_pacific_deal
-		
-		available = {
-			JAP = { 
-				OR = {
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				NOT = {
-					has_war_with = KSK
-				}
-			}
-		}
-		bypass = {
-			KSK = {
-				is_ally_with = JAP
-				OR = {
-					has_war_with = USA
-					has_war_with = ENG
-				}
-			}
-		}
-		
-		cost = 5
-		prerequisite = { focus = KSK_ryo_pacific_deal }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			JAP = { add_to_faction = KSK }
-			create_wargoal = {
-				type = take_core_state
-				target = SIA
-			}
-			add_war_support = 0.1
-			if = {
-				limit = {
-					JAP = {
-						has_war_with = ENG
-					}
-				}
-				add_to_war = {
-					targeted_alliance = JAP
-					enemy = ENG
-					hostility_reason = asked_to_join
-				}
-			}
-			else_if = {
-				add_to_war = {
-					targeted_alliance = JAP
-					enemy = USA
-					hostility_reason = asked_to_join
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_japanese_betrayal
-		icon = GFX_goal_ksk_ryo_japanese_kill
-		x = 0
-		y = 1
-		relative_position_id =KSK_ryo_pacific_war
-		
-		available = {
-			JAP = { 
-				OR = {
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				is_ally_with = KSK
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 1
-		prerequisite = { focus = KSK_ryo_pacific_war }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_war_support = 0.05
-			set_global_flag = ryo_is_a_betrayous_bitch
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_ryo_bonkers
-		icon = GFX_goal_ksk_ryo_bonkers
-		x = -1
-		y = 1
-		relative_position_id =KSK_ryo_japanese_betrayal
-		
-		available = {
-			JAP = { 
-				OR = {
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				is_ally_with = KSK
-			}
-			any_country = {
-				OR = {
-					is_ally_with = KSK
-					tag = KSK
-				}
-				controls_state = 334
-				controls_state = 333
-				controls_state = 672
-				controls_state = 336
-				controls_state = 335
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_ryo_japanese_betrayal }
-		mutually_exclusive = { focus = KSK_ryo_allied_agreement }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			declare_war_on = {
-				target = JAP
-				type = annex_everything
-			}
-			leave_faction = yes
-			add_war_support = 0.25
-			hidden_effect = {
-				add_manpower = 200000
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-        id = KSK_ryo_allied_agreement
-        icon = GFX_goal_ksk_ryo_eng_deal
-        x = 1
-        y = 1
-        relative_position_id =KSK_ryo_japanese_betrayal
-
-        available = {
-            JAP = { 
-                OR = {
-                    has_war_with = USA
-                    has_war_with = ENG
-                }
-                is_ally_with = KSK
-            }
-            KSK = {
-                OR = {
-                    is_ally_with = KSK
-                    tag = KSK
-                }
-                controls_state = 334
-                controls_state = 333
-                controls_state = 672
-                controls_state = 336
-                controls_state = 335
-            }
-        }
-        bypass = {
-
-        }
-
-        cost = 8
-        prerequisite = { focus = KSK_ryo_japanese_betrayal }
-        mutually_exclusive = { focus = KSK_ryo_bonkers }
-
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        available_if_capitulated = no
-
-        completion_reward = {
-            custom_effect_tooltip = KSK_ryo_allied_agreement_tt
-            leave_faction = yes
-            add_war_support = 0.05
-            random_other_country = {
-                limit = {
-                    OR = {
-                        tag = USA
-                        tag = ENG
-                    }
-                    has_war_with = JAP
-                    is_faction_leader = yes
-                }
-                THIS = {
-                    country_event = {
-                    id = kessoku.56
-                    }
-                }
-            }
-            every_enemy_country = {
-                limit = { 
-                    OR = {
-                        is_in_faction_with = ENG 
-                        is_in_faction_with = USA
-                    }
-                }
-                white_peace = KSK
-            }
-            every_enemy_country = {
-                limit = { 
-                    is_in_faction_with = CHI
-                }
-                white_peace = KSK
-            }
-            every_controlled_state = {
-                limit = {
-                    NOT = {
-                        is_owned_by = KSK
-                    }
-                }
-                transfer_state_to = KSK
-                add_core_of = KSK
-            }
-            JAP = {
-                every_controlled_state = {
-                    limit = {
-                        NOT = {
-                            is_owned_by = PREV
-                        }
-                    OR = {
-                        state = 333
-                        state = 336
-                        state = 672
-                        state = 336
-                        state = 335
-                        state = 334
-                        state = 673
-                        state = 667
-                        state = 721
-                        state = 668
-                        state = 669
-                        state = 738
-                        }
-                    }
-                    set_state_owner_to = ROOT
-                }
-                add_opinion_modifier = {
-                    target = KSK
-                    modifier = ryo_betrayal
-                }
-            }
-            hidden_effect = {
-                add_manpower = 100000
-            }
-        }
-        ai_will_do = {
-            factor = 1 
-        }
-    }
-	focus = {
-		id = KSK_ryo_weed_empire
-		icon = GFX_goal_ryo_weeds
-		x = 2
-		y = 2
-		relative_position_id =KSK_ryo_third_power
-		
-		available = {
-
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_ryo_third_power }
-		prerequisite = { focus = KSK_ryo_bonkers focus = KSK_ryo_allied_agreement }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_stability = 0.1
-			add_war_support = 0.4
-			set_cosmetic_tag = WEED
-			KSK_ryo_yamada = {
-				swap_country_leader_traits = {
-					remove = weed_eaters
-					add = ultimate_weed_eaters
-					ideology = nazism
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	
-	############################################################################
-	####################		     NIJIRYO	     ###########################
-	############################################################################
-	
-	focus = {
-		id = KSK_nijiryo_balance_power
-		icon = GFX_goal_ksk_nijiryo_balance
-		x = 0
-		y = 1
-		relative_position_id =KSK_unholy_duo_rules
-		
-		available = {
-
-		}
-		bypass = {
-		
-		}
-		
-		cost = 1
-		prerequisite = { focus = KSK_unholy_duo_rules }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			set_power_balance = {
-				id = KSK_balance
-				left_side = ryo_side
-				right_side = nijika_side
-				set_value = 0
-			}
-			set_cosmetic_tag = UHKSK
-			create_wargoal = {
-				type = take_core_state
-				target = SIA
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_ryo_reforms
-		icon = GFX_goal_ksk_nijiryo_ryo_demand
-		x = -2
-		y = 1
-		relative_position_id =KSK_nijiryo_balance_power
-		
-		available = {
-			NOT = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range > KSK_nijika_medium_control
-					}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_nijiryo_balance_power }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_reforms }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_war_support = 0.15
-			army_experience = 20
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_nijika_reforms
-		icon = GFX_goal_ksk_nijiryo_nijika_demand
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_balance_power
-		
-		available = {
-			NOT = {
-				is_power_balance_in_range = {
-					id = KSK_balance
-					range < KSK_ryo_medium_control
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 6
-		prerequisite = { focus = KSK_nijiryo_balance_power }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_reforms }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.4
-			}
-			add_stability = 0.15
-			add_political_power = 50
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_ryo_education
-		icon = GFX_goal_ksk_ryo_education
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_ryo_reforms
-		
-		available = {
-			NOT = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range > KSK_nijika_medium_control
-					}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 7
-		prerequisite = { focus = KSK_nijiryo_ryo_reforms focus = KSK_nijiryo_nijika_reforms }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_education }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = -0.4
-			}
-			add_research_slot = 1
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_nijika_education
-		icon = GFX_goal_ksk_education_nijika
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_nijika_reforms
-		
-		available = {
-			NOT = {
-				is_power_balance_in_range = {
-					id = KSK_balance
-					range < KSK_ryo_medium_control
-				}
-			}	
-		}
-		bypass = {
-		
-		}
-		
-		cost = 7
-		prerequisite = { focus = KSK_nijiryo_ryo_reforms focus = KSK_nijiryo_nijika_reforms }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_education }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.4
-			}
-			add_research_slot = 1
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_ryo_weeds_idea
-		icon = GFX_goal_ksk_nijiryo_tere
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_ryo_education
-		
-		available = {
-			NOT = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range > KSK_nijika_medium_control
-					}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 9
-		prerequisite = { focus = KSK_nijiryo_ryo_education focus = KSK_nijiryo_nijika_education }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_religious_idea }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = -0.4
-			}
-			add_ideas = ksk_ryo_weeds_idea
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_nijika_religious_idea
-		icon = GFX_goal_ksk_nijiryo_angelical_stability
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_nijika_education
-		
-		available = {
-			NOT = {
-				is_power_balance_in_range = {
-					id = KSK_balance
-					range < KSK_ryo_medium_control
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 9
-		prerequisite = { focus = KSK_nijiryo_ryo_education focus = KSK_nijiryo_nijika_education }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_weeds_idea }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.4
-			}
-			add_ideas = ksk_nijika_spiritual_idea
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_ryo_instruments
-		icon = GFX_goal_ksk_nijiryo_instruments
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_ryo_weeds_idea
-		
-		available = {
-			NOT = {
-					is_power_balance_in_range = {
-						id = KSK_balance
-						range > KSK_nijika_medium_control
-					}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 9
-		prerequisite = { focus = KSK_nijiryo_ryo_weeds_idea focus = KSK_nijiryo_nijika_religious_idea }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_sons_virtue }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = -0.4
-			}
-			add_ideas = ksk_instruments_nijiryo
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_nijika_sons_virtue
-		icon = GFX_goal_paragon_human
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_nijika_religious_idea
-		
-		available = {
-			NOT = {
-				is_power_balance_in_range = {
-					id = KSK_balance
-					range < KSK_ryo_medium_control
-				}
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 9
-		prerequisite = { focus = KSK_nijiryo_ryo_weeds_idea focus = KSK_nijiryo_nijika_religious_idea }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_instruments }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.4
-			}
-			add_ideas = ksk_sons_virtue
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_german_agreements
-		icon = GFX_goal_ksk_nijiryo_germany_agreement
-		x = -5
-		y = 1
-		relative_position_id =KSK_unholy_duo_rules
-		
-		available = {
-			GER = {
-				exists = yes
-			}
-			NOT = {
-				GER = {
-					has_war_with = KSK
-				}
-			}
-			has_completed_focus = KSK_nijiryo_balance_power
-		}
-		bypass = {
-			GER = {
-				has_government = democratic
-			}
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_unholy_duo_rules }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			GER = {
-				add_opinion_modifier = {
-					target = KSK
-					modifier = deus_weeded_germans
-				}
-				give_guarantee = KSK
-			}
-			KSK = {
-				add_opinion_modifier = {
-					target = GER
-					modifier = deus_weeded_germans
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_joins_axis
-		icon = GFX_goal_ksk_nijiryo_ryo_deal
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_german_agreements
-		
-		available = {
-			GER = {
-				exists = yes
-			}
-			NOT = {
-				GER = {
-					has_war_with = KSK
-				}
-			}
-		}
-		bypass = {
-			GER = {
-				has_government = democratic
-			}
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_german_agreements }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-		GER = { add_to_faction = KSK }
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_focus_asia
-		icon = GFX_goal_ksk_nijiryo_nijika_uncanny
-		x = 1
-		y = 1
-		relative_position_id =KSK_nijiryo_joins_axis
-		
-		available = {
-			has_completed_focus = KSK_nijiryo_balance_power
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_nijiryo_joins_axis }
-		mutually_exclusive = { focus = KSK_nijiryo_focus_america }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.2
-			}
-			add_state_core = 289
-			add_state_core = 868
-			add_state_core = 724
-			add_state_core = 671
-			add_state_core = 670
-			add_state_core = 408
-			add_state_core = 409
-			add_state_core = 560
-			add_state_core = 562
-			add_state_core = 574
-			add_state_core = 877
-			add_state_core = 874
-			add_state_core = 644
-			add_state_core = 637
-			add_state_core = 561
-			add_state_core = 433
-			add_state_core = 876
-			add_state_core = 563
-			add_state_core = 565
-			add_state_core = 575
-			add_state_core = 878
-			add_state_core = 657
-			add_state_core = 822
-			add_state_core = 875
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_focus_america
-		icon = GFX_goal_ksk_nijiryo_she_knows
-		x = -1
-		y = 1
-		relative_position_id =KSK_nijiryo_joins_axis
-		
-		available = {
-			has_completed_focus = KSK_nijiryo_balance_power
-		}
-		bypass = {
-		
-		}
-		
-		cost = 10
-		prerequisite = { focus = KSK_nijiryo_joins_axis }
-		mutually_exclusive = { focus = KSK_nijiryo_focus_asia }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = -0.2
-			}
-			add_state_core = 629
-			add_state_core = 378
-			add_state_core = 379
-			add_state_core = 385
-			add_state_core = 386
-			add_state_core = 473
-			add_state_core = 471
-			add_state_core = 864
-			add_state_core = 463
-			add_state_core = 740
-			add_state_core = 739
-			add_state_core = 320
-			add_state_core = 321
-			add_state_core = 336
-			add_state_core = 659
-			add_state_core = 470
-			add_state_core = 472
-			add_state_core = 380
-			add_state_core = 377
-			add_state_core = 387
-			create_wargoal = {
-				type = take_core_state
-				target = USA
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_iwo_jima
-		icon = GFX_goal_ksk_nijiryo_she_knows
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_focus_america
-		
-		available = {
-			JAP = {
-				controls_state = 645
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_focus_america }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			JAP = {
-				country_event = {
-				id = kessoku.39
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_kuril
-		icon = GFX_goal_ksk_nijiryo_nijika_uncanny
-		x = 0
-		y = 1
-		relative_position_id =KSK_nijiryo_focus_asia
-		
-		available = {
-			JAP = {
-				controls_state = 555
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_focus_asia }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			JAP = {
-				country_event = {
-				id = kessoku.36
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_ryo_dom
-		icon = GFX_goal_ksk_ryo_doms
-		x = 1
-		y = 2
-		relative_position_id =KSK_nijiryo_iwo_jima
-		
-		available = {
-			is_power_balance_in_range = {
-				id = KSK_balance
-				range < KSK_ryo_high_control
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
-		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_dom }
-		mutually_exclusive = { focus = KSK_nijiryo_no_one_doms }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = -0.2
-			}
-			KSK_unholy_duo = {
-				remove_country_leader_trait = angelical_spirit_small
-				swap_country_leader_traits = {
-					remove = weed_eater_small
-					add = weed_eater_nijiryo
-					ideology = marxism
-				}
-			}
-			add_war_support = 0.3
-			add_stability = 0.1
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_nijika_dom
-		icon = GFX_goal_ksk_nijika_doms
-		x = 1
-		y = 1
-		relative_position_id =KSK_nijiryo_ryo_instruments
-		
-		available = {
-			is_power_balance_in_range = {
-				id = KSK_balance
-				range > KSK_nijika_high_control
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
-		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_dom }
-		mutually_exclusive = { focus = KSK_nijiryo_no_one_doms }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_power_balance_value = {
-				id = KSK_balance
-				value = 0.2
-			}
-			KSK_unholy_duo = {
-				remove_country_leader_trait = weed_eater_small
-				swap_country_leader_traits = {
-					remove = angelical_spirit_small
-					add = angelical_spirit_nijiryo
-					ideology = marxism
-				}
-			}
-			add_stability = 0.3
-			add_war_support = 0.1
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	focus = {
-		id = KSK_nijiryo_no_one_doms
-		icon = GFX_goal_ksk_neutral_doms
-		x = -1
-		y = 1
-		relative_position_id =KSK_nijiryo_ryo_instruments
-		
-		available = {
-			is_power_balance_in_range = {
-				id = KSK_balance
-				range = KSK_neutral_balance
-			}
-		}
-		bypass = {
-		
-		}
-		
-		cost = 8
-		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
-		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
-		mutually_exclusive = { focus = KSK_nijiryo_ryo_dom }
-		mutually_exclusive = { focus = KSK_nijiryo_nijika_dom }
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_stability = 0.2
-			add_war_support = 0.2
-		}
-		ai_will_do = {
-			factor = 1 
-		}
-	}
-	
-	############################################################################
 	####################		    KITA		    ############################
 	############################################################################
 	
 	focus = {
 		id = KSK_kita_start
 		icon = GFX_goal_kita_start
-		x = -20
+		x = 4
 		y = 1
-		relative_position_id =KSK_political_turmoil
+		relative_position_id = KSK_peaceful_change
 		
 		available = {
 
@@ -5666,10 +3475,9 @@
 		}
 		
 		cost = 8
-		prerequisite = { focus = KSK_political_turmoil }
+		prerequisite = { focus = KSK_peaceful_change }
 		mutually_exclusive = { focus = KSK_heaven_for_death }
 		mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
-		mutually_exclusive = { focus = KSK_rattle_rattle }
 		mutually_exclusive = { focus = KSK_drunken_democracy }
 		mutually_exclusive = { focus = KSK_its_over }
 
@@ -6793,6 +4601,2815 @@
 			factor = 1 
 		}
 	}
+	
+	############################################################################
+	####################		    VIOLENT/RYO	    ############################
+	############################################################################
+	
+	focus = {
+		id = KSK_rattle_rattle
+		icon = GFX_goal_rattle_rattle
+		x = -6
+		y = 1
+		relative_position_id =KSK_violent_change
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_violent_change }
+		mutually_exclusive = { focus = KSK_futari_start }
+		mutually_exclusive = { focus = KSK_kita_communist_start }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		 add_political_power = 120
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_new_economic_minister
+		icon = GFX_goal_ryo_interested_blue
+		x = 0
+		y = 1
+		relative_position_id =KSK_rattle_rattle
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_rattle_rattle }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_advisor_role = {
+				character = KSK_ryo_yamada
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					idea_token = ksk_ryo_yamada_idea
+					can_be_fired = no
+					traits = {
+						weed_eater
+					}
+				}
+			}
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_buy_instruments
+		icon = GFX_goal_ryo_instruments
+		x = 0
+		y = 2
+		relative_position_id =KSK_new_economic_minister
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 4
+		prerequisite = { focus = KSK_new_economic_minister }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ksk_instruments
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_buy_guns
+		icon = GFX_goal_ryo_guns
+		x = -1
+		y = 1
+		relative_position_id =KSK_new_economic_minister
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 4
+		prerequisite = { focus = KSK_new_economic_minister }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ksk_guns
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = JAP
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_weeds
+		icon = GFX_goal_ryo_weeds
+		x = 1
+		y = 1
+		relative_position_id =KSK_new_economic_minister
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 4
+		prerequisite = { focus = KSK_new_economic_minister }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ksk_weeds
+			KSK_ryo_yamada = { 
+				add_country_leader_trait = stoner
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_fire_ryo
+		icon = GFX_goal_ryo_fired
+		x = 0
+		y = 1
+		relative_position_id =KSK_buy_instruments
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_ryo_weeds }
+		prerequisite = { focus = KSK_buy_guns }
+		prerequisite = { focus = KSK_buy_instruments }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_advisor_role = {
+				character = "KSK_ryo_yamada"
+				slot = political_advisor
+			}
+			add_stability = -0.05
+			remove_ideas = {
+				ksk_guns
+				ksk_instruments
+				ksk_weeds
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_gasoline_on_the_fire
+		icon = GFX_goal_gasoline_fire
+		x = 0
+		y = 1
+		relative_position_id =KSK_fire_ryo
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_fire_ryo }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = -0.05
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_state_robbery
+		icon = GFX_goal_ryo_interested_blue
+		x = 2
+		y = 1
+		relative_position_id =KSK_gasoline_on_the_fire
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_gasoline_on_the_fire }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.02
+			}
+			add_stability = -0.05
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_establish_mango_kamen
+		icon = GFX_goal_mango_kamen_blue
+		x = -2
+		y = 1
+		relative_position_id =KSK_gasoline_on_the_fire
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_gasoline_on_the_fire }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_unholy_duo_focus
+		icon = GFX_goal_ryo_beg
+		x = 0
+		y = 1
+		relative_position_id =KSK_gasoline_on_the_fire
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_gasoline_on_the_fire }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.1
+			}
+			hidden_effect = {
+				country_event = { id = kessoku.18 }
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_the_revolution
+		icon = GFX_goal_bocchi_fire
+		x = 0
+		y = 1
+		relative_position_id =KSK_unholy_duo_focus
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_unholy_duo_focus }
+		prerequisite = { focus = KSK_state_robbery }
+		prerequisite = { focus = KSK_establish_mango_kamen }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_civil_war_tt
+			add_stability = -0.15
+			hidden_effect = {
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = ROOT
+					size = 0.4
+					capital = 970
+					states = {
+						 971 970
+					}
+				}	
+				every_possible_country = {
+					limit = { has_character = KSK_seika_ijichi }
+					random_character = {
+						limit = { is_character = KSK_seika_ijichi }
+						set_nationality = ROOT
+					}
+				}
+				recruit_character = KSK_unholy_duo
+				promote_character = {
+					character = KSK_unholy_duo
+					ideology = falangism
+				}
+				add_field_marshal_role = {
+					character = KSK_ryo_yamada
+					skill = 4
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 1
+					logistics_skill = 4
+				}	
+				load_oob = "KSK_Kessokan_Civil_War_Fascist"
+				set_cosmetic_tag = RKUD
+				news_event = {
+					id = kessoku_news.3 
+					days = 1 
+				}
+				set_global_flag = kessokan_civil_war
+				set_country_flag = kcw
+				set_country_flag = nijiryo_flag
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 6500
+					producer = JAP
+				}	
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = GER
+				}
+				remove_ideas = {
+					ksk_unpopular_throne
+					ksk_powerless_leader
+				}
+				set_capital = {state = 974}
+				add_manpower = 100000
+				set_popularities = {
+					democratic = 0
+					neutrality = 35
+					fascism = 60
+					communism = 5
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = "The Wakaran Junta"
+					name = "Wakaran Junta"
+				}
+				every_possible_country = {
+					limit = { 
+						original_tag = KSK
+						has_government = fascism
+						has_country_flag = kcw
+					}
+						add_offsite_building = { type = arms_factory level = 1 }
+						add_offsite_building = { type = arms_factory level = 1 }
+						add_offsite_building = { type = industrial_complex level = 1 }
+						add_offsite_building = { type = industrial_complex level = 1 }
+						add_offsite_building = { type = industrial_complex level = 1 }
+				}
+				random_other_country = {
+					limit = {
+						original_tag = KSK
+						has_government = neutrality
+					}
+					retire_character = KSK_hitori_gotoh
+					KSK_futari_gotoh = {
+						set_nationality = PREV
+						promote_character = yes
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 5000
+						producer = JAP
+					}
+					load_oob = "KSK_Kessokan_Civil_War_Neutrality"
+				}
+				SHS = {
+					add_state_core = 970
+					add_state_core = 971
+					add_state_core = 972
+					add_state_core = 973
+					add_state_core = 975
+					add_state_core = 915
+					transfer_state = 972
+					transfer_state = 973
+					load_oob = "KSK_Kessokan_Civil_War_Democratic"
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 3000
+						producer = JAP
+					}	
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+						producer = GER
+					}
+					set_party_name = {
+						ideology = democratic
+						long_name = "Seishunists"
+						name = "Seishunists"
+					}	
+				}
+				every_country_with_original_tag = { 
+					original_tag_to_check = KSK
+					SHS = {
+						declare_war_on = {
+							target = PREV
+							type = civil_war
+						}
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_kita_ikuyo }
+					random_character = {
+						limit = { is_character = KSK_kita_ikuyo }
+						set_nationality = SHS
+						promote_character = yes
+					}
+				}			
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_steal_equipment_ryo
+		icon = GFX_goal_ryo_guns
+		x = 0
+		y = 1
+		relative_position_id =KSK_the_revolution
+		
+		available = { 
+			has_civil_war = yes
+			NOT = {
+				OR = {
+					has_completed_focus = KSK_betray_nijika
+					has_completed_focus = KSK_unholy_duo_rules
+				}
+			}
+		}
+			
+		bypass = {
+		
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_the_revolution }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			unlock_decision_category_tooltip = KSK_ryo_stealing_guns_category
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_volunteer_force
+		icon = GFX_goal_ryo_beg
+		x = -2
+		y = 1
+		relative_position_id =KSK_the_revolution
+		
+		available = {
+			has_civil_war = yes
+			NOT = {
+				OR = {
+					has_completed_focus = KSK_betray_nijika
+					has_completed_focus = KSK_unholy_duo_rules
+				}
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_the_revolution }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = 125000
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_spiritual_weeds
+		icon = GFX_goal_ryo_angel
+		x = 2
+		y = 1
+		relative_position_id =KSK_the_revolution
+		
+		available = {
+			has_civil_war = yes
+			NOT = {
+				OR = {
+					has_completed_focus = KSK_betray_nijika
+					has_completed_focus = KSK_unholy_duo_rules
+				}
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_the_revolution }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = ksk_weed_spiritual
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_unholy_duo_rules
+		icon = GFX_goal_nijika_ryo_alliance
+		x = -3
+		y = 2
+		relative_position_id =KSK_the_revolution
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcw
+				}
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_the_revolution }
+		mutually_exclusive = { focus = KSK_betray_nijika }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.1
+			set_capital = {state = 970}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_betray_nijika
+		icon = GFX_goal_ksk_ryo_demand
+		x = 3
+		y = 2
+		relative_position_id =KSK_the_revolution
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcw
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_the_revolution }
+		mutually_exclusive = { focus = KSK_unholy_duo_rules }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_nijika_civil_war_tt
+			add_stability = -0.05
+			hidden_effect = {
+				set_capital = {state = 974}
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = ROOT
+					size = 0.2
+					capital = 970
+					states = {
+						970 972
+					}
+					set_country_flag = nijika_kessoku
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_ryo_yamada }
+					random_character = {
+						limit = { is_character = KSK_ryo_yamada }
+						set_nationality = ROOT
+						promote_character = yes
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_kita_ikuyo_communist }
+					random_character = {
+						limit = { is_character = KSK_kita_ikuyo_communist }
+						set_nationality = ROOT
+						promote_character = yes
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_pa_san }
+					random_character = {
+						limit = { is_character = KSK_pa_san }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_jimihen }
+					random_character = {
+						limit = { is_character = KSK_jimihen }
+						set_nationality = ROOT
+						promote_character = yes
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_kikuri_hiroi }
+					random_character = {
+						limit = { is_character = KSK_kikuri_hiroi }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_eliza }
+					random_character = {
+						limit = { is_character = KSK_eliza }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_store_clerk_one }
+					random_character = {
+						limit = { is_character = KSK_store_clerk_one }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_store_clerk_two }
+					random_character = {
+						limit = { is_character = KSK_store_clerk_two }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_shima }
+					random_character = {
+						limit = { is_character = KSK_shima }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_classmate_one }
+					random_character = {
+						limit = { is_character = KSK_classmate_one }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_classmate_two }
+					random_character = {
+						limit = { is_character = KSK_classmate_two }
+						set_nationality = ROOT
+					}
+				}
+				every_possible_country = {
+					limit = { has_character = KSK_seika_ijichi }
+					random_character = {
+						limit = { is_character = KSK_seika_ijichi }
+						set_nationality = ROOT
+					}
+				}
+				retire_character = KSK_unholy_duo
+				set_cosmetic_tag = RKS
+				news_event = {
+					id = kessoku_news.4
+					days = 1 
+				}
+				set_country_flag = kcwn
+				set_country_flag = ryo_path
+				clr_country_flag = nijiryo_flag
+				load_oob = "KSK_Kessokan_Civil_War_Ryo"
+				add_manpower = 30000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 2000
+					producer = JAP
+				}	
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = GER
+				}
+				set_popularities = {
+					democratic = 0
+					neutrality = 20
+					fascism = 75
+					communism = 5
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = "The Weeders"
+					name = "Weeders"
+				}
+				random_other_country = {
+					limit = {
+						original_tag = KSK
+						has_government = fascism
+						has_country_flag = nijika_kessoku
+					}
+					KSK_nijika_ijichi = {
+						set_nationality = PREV
+						promote_character = yes
+					}
+					set_cosmetic_tag = HSKE
+					load_oob = "KSK_Kessokan_Civil_War_Nijika"
+					set_party_name = {
+						ideology = fascism
+						long_name = "The Church of Nijika"
+						name = "Church of Nijika"
+					}
+				}				
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	############################################################################
+	####################		  JUST RYO		 ###############################
+	############################################################################
+	
+	focus = {
+		id = KSK_ryo_first_power
+		icon = GFX_goal_ksk_prepare_ryo
+		x = 0
+		y = 1
+		relative_position_id =KSK_betray_nijika
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_betray_nijika }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ksk_ryo_exploit_1
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_promote_weeds
+		icon = GFX_goal_ryo_weeds
+		x = -2
+		y = 1
+		relative_position_id =KSK_ryo_first_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_betray_nijika }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			KSK_ryo_yamada = {
+				add_country_leader_trait = weed_eaters
+			}
+			add_stability = 0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_obligatory_bass
+		icon = GFX_goal_ksk_ryo_education
+		x = 2
+		y = 1
+		relative_position_id =KSK_ryo_first_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_betray_nijika }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_second_power
+		icon = GFX_goal_ksk_prepare_ryo
+		x = 0
+		y = 2
+		relative_position_id =KSK_ryo_first_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_ryo_first_power }
+		prerequisite = { focus = KSK_ryo_promote_weeds }
+		prerequisite = { focus = KSK_ryo_obligatory_bass }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ksk_ryo_exploit_1
+				add_idea = ksk_ryo_exploit_2
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_nuclear_stuff
+		icon = GFX_goal_ksk_ryo_nuke
+		x = 2
+		y = 1
+		relative_position_id =KSK_ryo_second_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_ryo_first_power }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}
+			unlock_decision_tooltip = KSK_ryo_nuclear
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_building_stuff
+		icon = GFX_goal_ksk_ryo_infrastructure
+		x = -2
+		y = 1
+		relative_position_id =KSK_ryo_second_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_ryo_first_power }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.33
+				uses = 2
+				category = nuclear
+			}
+			unlock_decision_tooltip = KSK_ryo_industrial_1
+			unlock_decision_tooltip = KSK_ryo_industrial_2
+			unlock_decision_tooltip = KSK_ryo_infrastructure_1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_third_power
+		icon = GFX_goal_ksk_prepare_ryo
+		x = 0
+		y = 2
+		relative_position_id =KSK_ryo_second_power
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_ryo_second_power }
+		prerequisite = { focus = KSK_ryo_building_stuff }
+		prerequisite = { focus = KSK_ryo_nuclear_stuff }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ksk_ryo_exploit_2
+				add_idea = ksk_ryo_exploit_3
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_japanese_agreement
+		icon = GFX_goal_ksk_ryo_japan_agreement
+		x = 4
+		y = 1
+		relative_position_id =KSK_betray_nijika
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_civil_war = yes
+					has_country_flag = kcwn
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_betray_nijika }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = {
+				add_opinion_modifier = {
+					target = KSK
+					modifier = weeded_japanese
+				}
+			}
+			KSK = {
+				add_opinion_modifier = {
+					target = JAP
+					modifier = weeded_japanese
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_pacific_deal
+		icon = GFX_goal_ksk_ryo_pacific_deal
+		x = 0
+		y = 1
+		relative_position_id =KSK_ryo_japanese_agreement
+		
+		available = {
+			KSK = { 
+				NOT = {
+					has_war_with = JAP
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_ryo_japanese_agreement }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 336
+			add_state_core = 672
+			add_state_core = 333
+			add_state_core = 289
+			add_state_core = 724
+			JAP = {
+				give_guarantee = KSK
+				add_state_claim = 324
+				add_state_claim = 335
+				add_state_claim = 673
+				add_state_claim = 662
+				add_state_claim = 668
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_pacific_war
+		icon = GFX_goal_ksk_ryo_straight
+		x = 0
+		y = 1
+		relative_position_id =KSK_ryo_pacific_deal
+		
+		available = {
+			JAP = { 
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+				NOT = {
+					has_war_with = KSK
+				}
+			}
+		}
+		bypass = {
+			KSK = {
+				is_ally_with = JAP
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+			}
+		}
+		
+		cost = 5
+		prerequisite = { focus = KSK_ryo_pacific_deal }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = { add_to_faction = KSK }
+			create_wargoal = {
+				type = take_core_state
+				target = SIA
+			}
+			add_war_support = 0.1
+			if = {
+				limit = {
+					JAP = {
+						has_war_with = ENG
+					}
+				}
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = ENG
+					hostility_reason = asked_to_join
+				}
+			}
+			else_if = {
+				add_to_war = {
+					targeted_alliance = JAP
+					enemy = USA
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_japanese_betrayal
+		icon = GFX_goal_ksk_ryo_japanese_kill
+		x = 0
+		y = 1
+		relative_position_id =KSK_ryo_pacific_war
+		
+		available = {
+			JAP = { 
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+				is_ally_with = KSK
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_ryo_pacific_war }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			set_global_flag = ryo_is_a_betrayous_bitch
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_ryo_bonkers
+		icon = GFX_goal_ksk_ryo_bonkers
+		x = -1
+		y = 1
+		relative_position_id =KSK_ryo_japanese_betrayal
+		
+		available = {
+			JAP = { 
+				OR = {
+					has_war_with = USA
+					has_war_with = ENG
+				}
+				is_ally_with = KSK
+			}
+			KSK = {
+                OR = {
+                    tag = KSK
+                    is_ally_with = KSK
+                }
+                controls_state = 334
+                controls_state = 333
+                controls_state = 672
+                controls_state = 336
+                controls_state = 335
+            }
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_ryo_japanese_betrayal }
+		mutually_exclusive = { focus = KSK_ryo_allied_agreement }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			declare_war_on = {
+				target = JAP
+				type = annex_everything
+			}
+			leave_faction = yes
+			add_war_support = 0.25
+			hidden_effect = {
+				add_manpower = 200000
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+        id = KSK_ryo_allied_agreement
+        icon = GFX_goal_ksk_ryo_eng_deal
+        x = 1
+        y = 1
+        relative_position_id =KSK_ryo_japanese_betrayal
+
+        available = {
+            JAP = { 
+                OR = {
+                    has_war_with = USA
+                    has_war_with = ENG
+                }
+                is_ally_with = KSK
+            }
+            KSK = {
+                OR = {
+                    is_ally_with = KSK
+                    tag = KSK
+                }
+                controls_state = 334
+                controls_state = 333
+                controls_state = 672
+                controls_state = 336
+                controls_state = 335
+            }
+        }
+        bypass = {
+
+        }
+
+        cost = 8
+        prerequisite = { focus = KSK_ryo_japanese_betrayal }
+        mutually_exclusive = { focus = KSK_ryo_bonkers }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        completion_reward = {
+            custom_effect_tooltip = KSK_ryo_allied_agreement_tt
+            leave_faction = yes
+            add_war_support = 0.05
+            random_other_country = {
+                limit = {
+                    OR = {
+                        tag = USA
+                        tag = ENG
+                    }
+                    has_war_with = JAP
+                    is_faction_leader = yes
+                }
+                THIS = {
+                    country_event = {
+                    id = kessoku.56
+                    }
+                }
+            }
+            every_enemy_country = {
+                limit = { 
+                    OR = {
+                        is_in_faction_with = ENG 
+                        is_in_faction_with = USA
+                    }
+                }
+                white_peace = KSK
+            }
+            every_enemy_country = {
+                limit = { 
+                    is_in_faction_with = CHI
+                }
+                white_peace = KSK
+            }
+            every_controlled_state = {
+                limit = {
+                    NOT = {
+                        is_owned_by = KSK
+                    }
+                }
+                transfer_state_to = KSK
+                add_core_of = KSK
+            }
+            JAP = {
+                every_controlled_state = {
+                    limit = {
+                        NOT = {
+                            is_owned_by = PREV
+                        }
+                    OR = {
+                        state = 333
+                        state = 336
+                        state = 672
+                        state = 336
+                        state = 335
+                        state = 334
+                        state = 673
+                        state = 667
+                        state = 721
+                        state = 668
+                        state = 669
+                        state = 738
+                        }
+                    }
+                    set_state_owner_to = ROOT
+                }
+                add_opinion_modifier = {
+                    target = KSK
+                    modifier = ryo_betrayal
+                }
+            }
+            hidden_effect = {
+                add_manpower = 100000
+            }
+        }
+        ai_will_do = {
+            factor = 1 
+        }
+    }
+	focus = {
+		id = KSK_ryo_weed_empire
+		icon = GFX_goal_ryo_weeds
+		x = 2
+		y = 2
+		relative_position_id =KSK_ryo_third_power
+		
+		available = {
+
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_ryo_third_power }
+		prerequisite = { focus = KSK_ryo_bonkers focus = KSK_ryo_allied_agreement }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.4
+			set_cosmetic_tag = WEED
+			KSK_ryo_yamada = {
+				swap_country_leader_traits = {
+					remove = weed_eaters
+					add = ultimate_weed_eaters
+					ideology = nazism
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	############################################################################
+	####################		     NIJIRYO	     ###########################
+	############################################################################
+	
+	focus = {
+		id = KSK_nijiryo_balance_power
+		icon = GFX_goal_ksk_nijiryo_balance
+		x = 0
+		y = 1
+		relative_position_id =KSK_unholy_duo_rules
+		
+		available = {
+
+		}
+		bypass = {
+		
+		}
+		
+		cost = 1
+		prerequisite = { focus = KSK_unholy_duo_rules }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_power_balance = {
+				id = KSK_balance
+				left_side = ryo_side
+				right_side = nijika_side
+				set_value = 0
+			}
+			set_cosmetic_tag = UHKSK
+			create_wargoal = {
+				type = take_core_state
+				target = SIA
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_ryo_reforms
+		icon = GFX_goal_ksk_nijiryo_ryo_demand
+		x = -2
+		y = 1
+		relative_position_id =KSK_nijiryo_balance_power
+		
+		available = {
+			NOT = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_nijiryo_balance_power }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_reforms }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.15
+			army_experience = 20
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_nijika_reforms
+		icon = GFX_goal_ksk_nijiryo_nijika_demand
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_balance_power
+		
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 6
+		prerequisite = { focus = KSK_nijiryo_balance_power }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_reforms }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.4
+			}
+			add_stability = 0.15
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_ryo_education
+		icon = GFX_goal_ksk_ryo_education
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_ryo_reforms
+		
+		available = {
+			NOT = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 7
+		prerequisite = { focus = KSK_nijiryo_ryo_reforms focus = KSK_nijiryo_nijika_reforms }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_education }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = -0.4
+			}
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_nijika_education
+		icon = GFX_goal_ksk_education_nijika
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_nijika_reforms
+		
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
+				}
+			}	
+		}
+		bypass = {
+		
+		}
+		
+		cost = 7
+		prerequisite = { focus = KSK_nijiryo_ryo_reforms focus = KSK_nijiryo_nijika_reforms }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_education }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.4
+			}
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_ryo_weeds_idea
+		icon = GFX_goal_ksk_nijiryo_tere
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_ryo_education
+		
+		available = {
+			NOT = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 9
+		prerequisite = { focus = KSK_nijiryo_ryo_education focus = KSK_nijiryo_nijika_education }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_religious_idea }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = -0.4
+			}
+			add_ideas = ksk_ryo_weeds_idea
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_nijika_religious_idea
+		icon = GFX_goal_ksk_nijiryo_angelical_stability
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_nijika_education
+		
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 9
+		prerequisite = { focus = KSK_nijiryo_ryo_education focus = KSK_nijiryo_nijika_education }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_weeds_idea }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.4
+			}
+			add_ideas = ksk_nijika_spiritual_idea
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_ryo_instruments
+		icon = GFX_goal_ksk_nijiryo_instruments
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_ryo_weeds_idea
+		
+		available = {
+			NOT = {
+					is_power_balance_in_range = {
+						id = KSK_balance
+						range > KSK_nijika_medium_control
+					}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 9
+		prerequisite = { focus = KSK_nijiryo_ryo_weeds_idea focus = KSK_nijiryo_nijika_religious_idea }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_sons_virtue }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = -0.4
+			}
+			add_ideas = ksk_instruments_nijiryo
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_nijika_sons_virtue
+		icon = GFX_goal_paragon_human
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_nijika_religious_idea
+		
+		available = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = KSK_balance
+					range < KSK_ryo_medium_control
+				}
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 9
+		prerequisite = { focus = KSK_nijiryo_ryo_weeds_idea focus = KSK_nijiryo_nijika_religious_idea }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_instruments }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.4
+			}
+			add_ideas = ksk_sons_virtue
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_german_agreements
+		icon = GFX_goal_ksk_nijiryo_germany_agreement
+		x = -5
+		y = 1
+		relative_position_id =KSK_unholy_duo_rules
+		
+		available = {
+			GER = {
+				exists = yes
+			}
+			NOT = {
+				GER = {
+					has_war_with = KSK
+				}
+			}
+			has_completed_focus = KSK_nijiryo_balance_power
+		}
+		bypass = {
+			GER = {
+				has_government = democratic
+			}
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_unholy_duo_rules }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = KSK
+					modifier = deus_weeded_germans
+				}
+				give_guarantee = KSK
+			}
+			KSK = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = deus_weeded_germans
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_joins_axis
+		icon = GFX_goal_ksk_nijiryo_ryo_deal
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_german_agreements
+		
+		available = {
+			GER = {
+				exists = yes
+			}
+			NOT = {
+				GER = {
+					has_war_with = KSK
+				}
+			}
+		}
+		bypass = {
+			GER = {
+				has_government = democratic
+			}
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_german_agreements }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		GER = { add_to_faction = KSK }
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_focus_asia
+		icon = GFX_goal_ksk_nijiryo_nijika_uncanny
+		x = 1
+		y = 1
+		relative_position_id =KSK_nijiryo_joins_axis
+		
+		available = {
+			has_completed_focus = KSK_nijiryo_balance_power
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_nijiryo_joins_axis }
+		mutually_exclusive = { focus = KSK_nijiryo_focus_america }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.2
+			}
+			add_state_core = 289
+			add_state_core = 868
+			add_state_core = 724
+			add_state_core = 671
+			add_state_core = 670
+			add_state_core = 408
+			add_state_core = 409
+			add_state_core = 560
+			add_state_core = 562
+			add_state_core = 574
+			add_state_core = 877
+			add_state_core = 874
+			add_state_core = 644
+			add_state_core = 637
+			add_state_core = 561
+			add_state_core = 433
+			add_state_core = 876
+			add_state_core = 563
+			add_state_core = 565
+			add_state_core = 575
+			add_state_core = 878
+			add_state_core = 657
+			add_state_core = 822
+			add_state_core = 875
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_focus_america
+		icon = GFX_goal_ksk_nijiryo_she_knows
+		x = -1
+		y = 1
+		relative_position_id =KSK_nijiryo_joins_axis
+		
+		available = {
+			has_completed_focus = KSK_nijiryo_balance_power
+		}
+		bypass = {
+		
+		}
+		
+		cost = 10
+		prerequisite = { focus = KSK_nijiryo_joins_axis }
+		mutually_exclusive = { focus = KSK_nijiryo_focus_asia }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = -0.2
+			}
+			add_state_core = 629
+			add_state_core = 378
+			add_state_core = 379
+			add_state_core = 385
+			add_state_core = 386
+			add_state_core = 473
+			add_state_core = 471
+			add_state_core = 864
+			add_state_core = 463
+			add_state_core = 740
+			add_state_core = 739
+			add_state_core = 320
+			add_state_core = 321
+			add_state_core = 336
+			add_state_core = 659
+			add_state_core = 470
+			add_state_core = 472
+			add_state_core = 380
+			add_state_core = 377
+			add_state_core = 387
+			create_wargoal = {
+				type = take_core_state
+				target = USA
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_iwo_jima
+		icon = GFX_goal_ksk_nijiryo_she_knows
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_focus_america
+		
+		available = {
+			JAP = {
+				controls_state = 645
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_focus_america }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = {
+				country_event = {
+				id = kessoku.39
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_kuril
+		icon = GFX_goal_ksk_nijiryo_nijika_uncanny
+		x = 0
+		y = 1
+		relative_position_id =KSK_nijiryo_focus_asia
+		
+		available = {
+			JAP = {
+				controls_state = 555
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_focus_asia }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = {
+				country_event = {
+				id = kessoku.36
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_ryo_dom
+		icon = GFX_goal_ksk_ryo_doms
+		x = 1
+		y = 2
+		relative_position_id =KSK_nijiryo_iwo_jima
+		
+		available = {
+			is_power_balance_in_range = {
+				id = KSK_balance
+				range < KSK_ryo_high_control
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
+		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_dom }
+		mutually_exclusive = { focus = KSK_nijiryo_no_one_doms }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = -0.2
+			}
+			KSK_unholy_duo = {
+				remove_country_leader_trait = angelical_spirit_small
+				swap_country_leader_traits = {
+					remove = weed_eater_small
+					add = weed_eater_nijiryo
+					ideology = marxism
+				}
+			}
+			add_war_support = 0.3
+			add_stability = 0.1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_nijika_dom
+		icon = GFX_goal_ksk_nijika_doms
+		x = 1
+		y = 1
+		relative_position_id =KSK_nijiryo_ryo_instruments
+		
+		available = {
+			is_power_balance_in_range = {
+				id = KSK_balance
+				range > KSK_nijika_high_control
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
+		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_dom }
+		mutually_exclusive = { focus = KSK_nijiryo_no_one_doms }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_power_balance_value = {
+				id = KSK_balance
+				value = 0.2
+			}
+			KSK_unholy_duo = {
+				remove_country_leader_trait = weed_eater_small
+				swap_country_leader_traits = {
+					remove = angelical_spirit_small
+					add = angelical_spirit_nijiryo
+					ideology = marxism
+				}
+			}
+			add_stability = 0.3
+			add_war_support = 0.1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_nijiryo_no_one_doms
+		icon = GFX_goal_ksk_neutral_doms
+		x = -1
+		y = 1
+		relative_position_id =KSK_nijiryo_ryo_instruments
+		
+		available = {
+			is_power_balance_in_range = {
+				id = KSK_balance
+				range = KSK_neutral_balance
+			}
+		}
+		bypass = {
+		
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_nijiryo_kuril focus = KSK_nijiryo_iwo_jima }
+		prerequisite = { focus = KSK_nijiryo_nijika_sons_virtue focus = KSK_nijiryo_ryo_instruments }
+		mutually_exclusive = { focus = KSK_nijiryo_ryo_dom }
+		mutually_exclusive = { focus = KSK_nijiryo_nijika_dom }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+############################################################################
+####################	       	FUTARI					####################
+############################################################################
+	
+	focus = {
+		id = KSK_futari_start
+		icon = GFX_goal_futari_start_regime
+		x = -1
+		y = 1
+		relative_position_id =KSK_violent_change
+		
+		allow_branch = {
+			always = no
+		}
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_violent_change }
+		mutually_exclusive = { focus = KSK_rattle_rattle }
+		mutually_exclusive = { focus = KSK_kita_communist_start }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		 add_political_power = 120
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_bocchi_learn
+		icon = GFX_goal_futari_bocchi
+		x = 0
+		y = 1
+		relative_position_id =KSK_futari_start
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_start }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_futari_bocchi_learn_tt
+			hidden_effect = {
+				country_event = {
+					id = kessoku.87
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_parents_learn
+		icon = GFX_goal_futari_parents
+		x = 0
+		y = 1
+		relative_position_id =KSK_futari_bocchi_learn
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_bocchi_learn }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_futari_parents_learn_tt
+			hidden_effect = {
+				country_event = {
+					id = kessoku.88
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_low_sec
+		icon = GFX_goal_futari_security
+		x = 0
+		y = 1
+		relative_position_id =KSK_futari_parents_learn
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_parents_learn }
+		mutually_exclusive = { focus = KSK_futari_high_sec }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_futari_security_tt
+			hidden_effect = {
+				country_event = {
+					id = kessoku.91
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_high_sec
+		icon = GFX_goal_futari_bocchi
+		x = 1
+		y = 1
+		relative_position_id =KSK_futari_parents_learn
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_parents_learn }
+		mutually_exclusive = { focus = KSK_futari_low_sec }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_futari_bocchi_learn_tt
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_work_government
+		icon = GFX_goal_futari_government
+		x = 0
+		y = 2
+		relative_position_id =KSK_futari_parents_learn
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_low_sec }
+		prerequisite = { focus = KSK_futari_high_sec }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_advisor_role = {
+				character = KSK_futari_gotoh
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					idea_token = ksk_futari_gotoh_idea
+					can_be_fired = no
+					traits = {
+						wolf_sheep_clothing
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_futari_true_heir
+		icon = GFX_goal_futari_true_heir
+		x = 0
+		y = 1
+		relative_position_id =KSK_futari_work_government
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_futari_work_government }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			KSK_futari_gotoh = {
+				swap_country_leader_traits = {
+					remove = untrained_monarch
+					add = trained_monarch
+					ideology = oligarchism
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+###########################################################################
+####################	       	COMMUNIST KITA					###########
+###########################################################################
+	
+	focus = {
+		id = KSK_kita_communist_start
+		icon = GFX_goal_kita_communist_start
+		x = -11
+		y = 1
+		relative_position_id =KSK_violent_change
+		
+		allow_branch = {
+			always = no
+		}
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_violent_change }
+		mutually_exclusive = { focus = KSK_rattle_rattle }
+		mutually_exclusive = { focus = KSK_futari_start }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 120
+			hidden_effect = {
+				retire_character = KSK_kita_ikuyo
+				KSK_eliza = {
+					add_country_leader_role = {
+					character = KSK_eliza
+					promote_leader = yes
+						country_leader = {
+							ideology = liberalism
+							expire = "1965.1.1.1"
+							traits = { war_industrialist }
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_soviet_help
+		icon = GFX_goal_kita_soviet_help
+		x = 1
+		y = 1
+		relative_position_id =KSK_kita_communist_start
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_communist_start }
+		mutually_exclusive = { focus = KSK_kita_local_support }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_country_flag = soviet_support_kessoku
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = -0.03
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_local_support
+		icon = GFX_goal_kita_communist_support
+		x = -1
+		y = 1
+		relative_position_id =KSK_kita_communist_start
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_communist_start }
+		mutually_exclusive = { focus = KSK_kita_soviet_help }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_country_flag = kita_local_support
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			add_stability = -0.1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_meet_losif
+		icon = GFX_goal_kita_stalin
+		x = 1
+		y = 1
+		relative_position_id =KSK_kita_soviet_help
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_soviet_help }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_kita_meet_stalin_tt
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			hidden_effect = {
+				country_event = {
+					id = kessoku.89
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_cult_communist
+		icon = GFX_goal_kita_cult
+		x = -1
+		y = 1
+		relative_position_id =KSK_kita_local_support
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_local_support }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			KSK_kita_ikuyo_communist = {
+				add_country_leader_trait = cult_following_kita
+				set_character_name = KSK_kita_cult_name
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_soviet_spies
+		icon = GFX_goal_ksk_kita_uber_demand
+		x = -1
+		y = 2
+		relative_position_id =KSK_kita_meet_losif
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_meet_losif }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_stability = -0.1
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_national
+		icon = GFX_goal_kita_national
+		x = 1
+		y = 2
+		relative_position_id =KSK_kita_cult_communist
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_cult_communist }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_kita_first_national_tt
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.05
+			hidden_effect = {
+				country_event = {
+					id = kessoku.90
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_soviet_materiel
+		icon = GFX_goal_kita_soviet_material
+		x = 0
+		y = 1
+		relative_position_id =KSK_kita_soviet_spies
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_soviet_spies }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KSK_kita_soviet_support_tt
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
+			add_stability = -0.03
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	focus = {
+		id = KSK_kita_nijiryo_sabotage
+		icon = GFX_goal_kita_nijiryo
+		x = 0
+		y = 1
+		relative_position_id =KSK_kita_national
+		
+		available = {
+
+		}
+		bypass = {
+		}
+		
+		cost = 8
+		prerequisite = { focus = KSK_kita_national }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	
 ############################################################################
 ####################		ECONOMIC RECOVERY		########################
 ############################################################################
@@ -7036,21 +7653,21 @@
 				category = cat_production
 			}
 			hidden_effect = {
-				activate_targeted_decision = { target = 935 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 935 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 936 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 936 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 937 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 937 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 970 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 970 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 971 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 971 decision = KSK_arms_factory_large }
+				activate_targeted_decision = { target = 972 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 972 decision = KSK_arms_factory_large }
 				activate_targeted_decision = { target = 741 decision = KSK_arms_factory }
 				activate_targeted_decision = { target = 741 decision = KSK_arms_factory_large }
-				activate_targeted_decision = { target = 938 decision = KSK_arms_factory }
-				activate_targeted_decision = { target = 939 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 973 decision = KSK_arms_factory }
+				activate_targeted_decision = { target = 974 decision = KSK_arms_factory }
 				if = {
 					limit = {
-						940 = { is_owned_and_controlled_by = KSK }
+						975 = { is_owned_and_controlled_by = KSK }
 					}
-					activate_targeted_decision = { target = 940 decision = KSK_arms_factory }
+					activate_targeted_decision = { target = 975 decision = KSK_arms_factory }
 				}
 			}
 			custom_effect_tooltip = KSK_arms_factory_tt
@@ -7091,21 +7708,21 @@
 				category = construction_tech
 			}
 			hidden_effect = {
-				activate_targeted_decision = { target = 935 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 935 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 936 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 936 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 937 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 937 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 970 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 970 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 971 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 971 decision = KSK_civilian_factory_large }
+				activate_targeted_decision = { target = 972 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 972 decision = KSK_civilian_factory_large }
 				activate_targeted_decision = { target = 741 decision = KSK_civilian_factory }
 				activate_targeted_decision = { target = 741 decision = KSK_civilian_factory_large }
-				activate_targeted_decision = { target = 938 decision = KSK_civilian_factory }
-				activate_targeted_decision = { target = 939 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 973 decision = KSK_civilian_factory }
+				activate_targeted_decision = { target = 974 decision = KSK_civilian_factory }
 				if = {
 					limit = {
-						940 = { is_owned_and_controlled_by = KSK }
+						975 = { is_owned_and_controlled_by = KSK }
 					}
-					activate_targeted_decision = { target = 940 decision = KSK_civilian_factory }
+					activate_targeted_decision = { target = 975 decision = KSK_civilian_factory }
 				}
 			}
 			custom_effect_tooltip = KSK_civilian_factory_tt
@@ -7146,7 +7763,7 @@
 					province = 7303
 					value = 50
 				}
-				936 = {
+				971 = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
@@ -7159,7 +7776,7 @@
 						instant_build = yes
 					}
 				}
-				935 = {
+				970 = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
@@ -7361,7 +7978,7 @@
 						has_completed_focus = KSK_industry_2b
 						has_idea = KSK_capital_focus
 					}
-					935 = {
+					970 = {
 						add_dynamic_modifier = { modifier = KSK_capital_exploitation }
 					}
 				}
@@ -7369,7 +7986,7 @@
 					limit = {
 						has_completed_focus = KSK_industry_2a
 						}
-						935 = {
+						970 = {
 							add_dynamic_modifier = { modifier = KSK_capital_exploitation }
 						}
 					}
@@ -7413,12 +8030,12 @@
 		    add_resource = {
 				type = steel
 				amount = 16
-				state = 937
+				state = 972
 			}
 			add_resource = {
 				type = aluminium
 				amount = 7
-				state = 938
+				state = 973
 			}
 		}
 		ai_will_do = {
@@ -7669,7 +8286,7 @@
 				type = convoy
 				amount = 50
 			}
-			936 = {
+			971 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7708,7 +8325,7 @@
 		    add_resource = {
 				type = steel
 				amount = 15
-				state = 937
+				state = 972
 			}
 		}
 		ai_will_do = {
@@ -7738,7 +8355,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-		    937 = {
+		    972 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
@@ -8089,7 +8706,7 @@ shared_focus = {
 	id = KSK_drunken_democracy
 	icon = GFX_KSK_drunken_democracy
 	cost = 7
-	x = -28
+	x = -13
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_drunken_democracy"
@@ -8098,7 +8715,6 @@ shared_focus = {
 	relative_position_id = KSK_political_turmoil
 	prerequisite = { focus = KSK_political_turmoil }
 	mutually_exclusive = { focus = KSK_kita_start }
-	mutually_exclusive = { focus = KSK_rattle_rattle }
 	mutually_exclusive = { focus = KSK_heaven_for_death }
 	mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
 	mutually_exclusive = { focus = KSK_its_over }
@@ -8490,7 +9106,7 @@ shared_focus = {
 	id = KSK_its_over
 	icon = GFX_KSK_its_over
 	cost = 8
-	x = -40
+	x = -27
 	y = 1
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus KSK_its_over"
@@ -8499,7 +9115,6 @@ shared_focus = {
 	relative_position_id = KSK_political_turmoil
 	prerequisite = { focus = KSK_political_turmoil }
 	mutually_exclusive = { focus = KSK_kita_start }
-	mutually_exclusive = { focus = KSK_rattle_rattle }
 	mutually_exclusive = { focus = KSK_heaven_for_death }
 	mutually_exclusive = { focus = KSK_lonely_ruling_bocchi }
 	mutually_exclusive = { focus = KSK_drunken_democracy }

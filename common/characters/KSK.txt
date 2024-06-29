@@ -70,7 +70,7 @@ characters={
 		gender = female
 		portraits={
 			civilian={
-				large=GFX_portrait_KSK_kita_ikuyo
+				large=GFX_portrait_KSK_kita_communist
 				small=GFX_portrait_KSK_kita_ikuyo_small
 			}
 		}
@@ -201,17 +201,7 @@ characters={
 			ideology=oligarchism
 			desc = KSK_FUTARI_DESC
 			expire="1989.1.1.1"
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = ksk_futari_gotoh_advisor
-			can_be_fired = yes
-			allowed = {
-				original_tag = KSK
-			}
-			traits = {
-				wolf_sheep_clothing
-			}
+			traits = { untrained_monarch }
 		}
 	}
 	KSK_jimihen={
